@@ -267,7 +267,7 @@ Given /the following movies exist/ do |movies_table|
 end
 
 Then /^the director of "([^"]*)" should be "([^"]*)"$/ do |arg1, arg2|
-  debugger
-  Movie.find_by_title(arg1).director should be arg2
+  assert Movie.find_by_title(arg1).director == arg2
+  #Movie.find_by_title(arg1).director should be == arg2
 end
 
