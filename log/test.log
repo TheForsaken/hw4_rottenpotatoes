@@ -2331,3 +2331,14 @@ Completed 200 OK in 146ms (Views: 113.8ms | ActiveRecord: 0.0ms)
   Parameters: {"director"=>"George Lucas"}
 Rendered movies/find_mwsd.html.haml within layouts/application (1.0ms)
 Completed 200 OK in 577ms (Views: 467.3ms | ActiveRecord: 0.0ms)
+  Processing by MoviesController#find_mwsd as HTML
+  Parameters: {"director"=>"George Lucas"}
+Rendered movies/find_mwsd.html.haml within layouts/application (1.1ms)
+Completed 200 OK in 362ms (Views: 276.2ms | ActiveRecord: 0.0ms)
+  Processing by MoviesController#find_mwsd as HTML
+  Parameters: {"director"=>"George Lucas"}
+Rendered movies/find_mwsd.html.haml within layouts/application (1.0ms)
+Completed 200 OK in 155ms (Views: 118.0ms | ActiveRecord: 0.0ms)
+  Processing by MoviesController#find_mwsd as HTML
+  Parameters: {"director"=>"George Lucas"}
+Completed 200 OK in 3ms (Views: 3.1ms | ActiveRecord: 0.0ms)
