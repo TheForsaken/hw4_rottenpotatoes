@@ -29,7 +29,7 @@ module NavigationHelpers
 			movie_id = Movie.find_by_title($1).id
 			"/movies/#{movie_id}"
 	  when /^the Similar Movies page for "(.+)"$/
-      "/movies/find_mwsd/#{$1}"
+      "/movies/#{$1}/find_mwsd"
 
 
  		#when /^(.*)'s profile page$/i
