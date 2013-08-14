@@ -5,13 +5,13 @@ describe MoviesController do
     it 'should call the model method that performs FMWSD search' do
 			#pending "Not Yet Implemented"
 			#Movie.should_receive(:fmwsd_search).with('Jeezus')
-      post :fmwsd_search, {:director => 'Jeezus'}
+      post :find_mwsd, {:director => 'Jeezus'}
     end
     it 'should select the FMWSD Search Results template for rendering' do
       pending "Not Yet !!!"
 			#Movie.stub(:fmwsd_search)
-      #post :fmwsd_search, {:director => 'Jeezus'}
-      #response.should render_template('fmwsd_search')
+      #post :find_mwsd, {:director => 'Jeezus'}
+      #response.should render_template('find_mwsd')
     end
   end
 end

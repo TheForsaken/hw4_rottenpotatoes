@@ -2145,3 +2145,17 @@ Started GET "/movies/3" for 127.0.0.1 at 2013-08-14 00:42:09 -0700
   [1m[35mMovie Load (0.0ms)[0m  SELECT "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT 1  [["id", "3"]]
 Rendered movies/show.html.haml within layouts/application (8.1ms)
 Completed 200 OK in 10ms (Views: 9.6ms | ActiveRecord: 0.0ms)
+  Processing by MoviesController#find_mwsd as HTML
+  Parameters: {"director"=>"Jeezus"}
+Completed 500 Internal Server Error in 179ms
+  Processing by MoviesController#find_mwsd as HTML
+  Parameters: {"director"=>"Jeezus"}
+Completed 500 Internal Server Error in 155ms
+  Processing by MoviesController#find_mwsd as HTML
+  Parameters: {"director"=>"Jeezus"}
+Rendered movies/find_mwsd.html.haml within layouts/application (1.0ms)
+Completed 200 OK in 178ms (Views: 177.9ms | ActiveRecord: 0.0ms)
+  Processing by MoviesController#find_mwsd as HTML
+  Parameters: {"director"=>"Jeezus"}
+Rendered movies/find_mwsd.html.haml within layouts/application (1.1ms)
+Completed 200 OK in 149ms (Views: 149.0ms | ActiveRecord: 0.0ms)
