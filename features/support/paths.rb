@@ -25,13 +25,16 @@ module NavigationHelpers
       #debugger
       movie_id = Movie.find_by_title($1).id
     	"/movies/#{movie_id}/edit"
-		 when /^the details page for "(.+)"$/
+		when /^the details page for "(.+)"$/
 			movie_id = Movie.find_by_title($1).id
 			"/movies/#{movie_id}"
-	
+	  when /^the Similar Movies page for "(.+)"$/
+      "/movies/find_mwsd/#{$1}"
+
+
  		#when /^(.*)'s profile page$/i
 		#user_profile_path(User.find_by_login($1))
-		
+
  		
     # Add more mappings here.
     # Here is an example that pulls values out of the Regexp:
