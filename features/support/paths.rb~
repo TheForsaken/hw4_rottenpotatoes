@@ -10,17 +10,23 @@ module NavigationHelpers
   #
   # step definition in web_steps.rb
   #
+  def click_link(link)
+    case link
+    when /^Find Movies With Same Director$/
+      "/movies/find_mwsd"
+
   def path_to(page_name)
     case page_name
 
     when /^the home\s?page$/
     	'/'
     when /^the edit page for "(.+)"$/
-      debugger
-      #movie_id = Movie.find_by_title($1).id
-    	"/movies/#{$1}/edit"
+      #debugger
+      movie_id = Movie.find_by_title($1).id
+    	"/movies/#{movie_id}/edit"
 		 when /^the details page for "(.+)"$/
-			"/movies/#{$1}"
+			movie_id = Movie.find_by_title($1).id
+			"/movies/#{movie_id}"
 	
  		#when /^(.*)'s profile page$/i
 		#user_profile_path(User.find_by_login($1))

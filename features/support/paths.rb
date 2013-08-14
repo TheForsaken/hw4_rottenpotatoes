@@ -10,6 +10,12 @@ module NavigationHelpers
   #
   # step definition in web_steps.rb
   #
+  def click_link(link)
+    case link
+    when /^Find Movies With Same Director$/
+      "/movies/find_mwsd"
+    end
+  end
   def path_to(page_name)
     case page_name
 
