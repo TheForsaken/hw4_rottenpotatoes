@@ -2342,3 +2342,1010 @@ Completed 200 OK in 155ms (Views: 118.0ms | ActiveRecord: 0.0ms)
   Processing by MoviesController#find_mwsd as HTML
   Parameters: {"director"=>"George Lucas"}
 Completed 200 OK in 3ms (Views: 3.1ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (31.3ms)[0m  INSERT INTO "movies" ("created_at", "description", "director", "rating", "release_date", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["created_at", Wed, 14 Aug 2013 09:22:10 UTC +00:00], ["description", nil], ["director", "George Lucas"], ["rating", "PG"], ["release_date", Wed, 25 May 1977 00:00:00 UTC +00:00], ["title", "Star Wars"], ["updated_at", Wed, 14 Aug 2013 09:22:10 UTC +00:00]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "movies" ("created_at", "description", "director", "rating", "release_date", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["created_at", Wed, 14 Aug 2013 09:22:10 UTC +00:00], ["description", nil], ["director", "Ridley Scott"], ["rating", "PG"], ["release_date", Fri, 25 Jun 1982 00:00:00 UTC +00:00], ["title", "Blade Runner"], ["updated_at", Wed, 14 Aug 2013 09:22:10 UTC +00:00]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "movies" ("created_at", "description", "director", "rating", "release_date", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["created_at", Wed, 14 Aug 2013 09:22:10 UTC +00:00], ["description", nil], ["director", ""], ["rating", "R"], ["release_date", Fri, 25 May 1979 00:00:00 UTC +00:00], ["title", "Alien"], ["updated_at", Wed, 14 Aug 2013 09:22:10 UTC +00:00]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "movies" ("created_at", "description", "director", "rating", "release_date", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["created_at", Wed, 14 Aug 2013 09:22:10 UTC +00:00], ["description", nil], ["director", "George Lucas"], ["rating", "R"], ["release_date", Thu, 11 Mar 1971 00:00:00 UTC +00:00], ["title", "THX-1138"], ["updated_at", Wed, 14 Aug 2013 09:22:10 UTC +00:00]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mMovie Load (0.2ms)[0m  [1mSELECT "movies".* FROM "movies" WHERE "movies"."title" = 'Alien' LIMIT 1[0m
+
+
+Started GET "/movies/3/edit" for 127.0.0.1 at 2013-08-14 02:22:11 -0700
+  Processing by MoviesController#edit as HTML
+  Parameters: {"id"=>"3"}
+  [1m[35mMovie Load (0.2ms)[0m  SELECT "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT 1  [["id", "3"]]
+Rendered movies/edit.html.haml within layouts/application (7.8ms)
+Completed 200 OK in 136ms (Views: 134.2ms | ActiveRecord: 0.2ms)
+
+
+Started PUT "/movies/3" for 127.0.0.1 at 2013-08-14 02:22:11 -0700
+  Processing by MoviesController#update as HTML
+  Parameters: {"utf8"=>"✓", "movie"=>{"title"=>"Alien", "rating"=>"R", "director"=>"Ridley Scott", "release_date(1i)"=>"1979", "release_date(2i)"=>"5", "release_date(3i)"=>"25"}, "commit"=>"Update Movie Info", "id"=>"3"}
+  [1m[36mMovie Load (0.1ms)[0m  [1mSELECT "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT 1[0m  [["id", "3"]]
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mUPDATE "movies" SET "director" = 'Ridley Scott', "updated_at" = '2013-08-14 09:22:11.697268' WHERE "movies"."id" = 3[0m
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://www.example.com/movies/3
+Completed 302 Found in 4ms
+
+
+Started GET "/movies/3" for 127.0.0.1 at 2013-08-14 02:22:11 -0700
+  Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mMovie Load (0.1ms)[0m  [1mSELECT "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT 1[0m  [["id", "3"]]
+Rendered movies/show.html.haml within layouts/application (28.2ms)
+Completed 500 Internal Server Error in 31ms
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "movies" ("created_at", "description", "director", "rating", "release_date", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["created_at", Wed, 14 Aug 2013 09:22:11 UTC +00:00], ["description", nil], ["director", "George Lucas"], ["rating", "PG"], ["release_date", Wed, 25 May 1977 00:00:00 UTC +00:00], ["title", "Star Wars"], ["updated_at", Wed, 14 Aug 2013 09:22:11 UTC +00:00]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "movies" ("created_at", "description", "director", "rating", "release_date", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["created_at", Wed, 14 Aug 2013 09:22:11 UTC +00:00], ["description", nil], ["director", "Ridley Scott"], ["rating", "PG"], ["release_date", Fri, 25 Jun 1982 00:00:00 UTC +00:00], ["title", "Blade Runner"], ["updated_at", Wed, 14 Aug 2013 09:22:11 UTC +00:00]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "movies" ("created_at", "description", "director", "rating", "release_date", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["created_at", Wed, 14 Aug 2013 09:22:11 UTC +00:00], ["description", nil], ["director", ""], ["rating", "R"], ["release_date", Fri, 25 May 1979 00:00:00 UTC +00:00], ["title", "Alien"], ["updated_at", Wed, 14 Aug 2013 09:22:11 UTC +00:00]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "movies" ("created_at", "description", "director", "rating", "release_date", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["created_at", Wed, 14 Aug 2013 09:22:11 UTC +00:00], ["description", nil], ["director", "George Lucas"], ["rating", "R"], ["release_date", Thu, 11 Mar 1971 00:00:00 UTC +00:00], ["title", "THX-1138"], ["updated_at", Wed, 14 Aug 2013 09:22:11 UTC +00:00]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mMovie Load (0.0ms)[0m  SELECT "movies".* FROM "movies" WHERE "movies"."title" = 'Star Wars' LIMIT 1
+
+
+Started GET "/movies/1" for 127.0.0.1 at 2013-08-14 02:22:11 -0700
+  Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mMovie Load (0.1ms)[0m  [1mSELECT "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT 1[0m  [["id", "1"]]
+Rendered movies/show.html.haml within layouts/application (68.5ms)
+Completed 500 Internal Server Error in 73ms
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "movies" ("created_at", "description", "director", "rating", "release_date", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["created_at", Wed, 14 Aug 2013 09:22:11 UTC +00:00], ["description", nil], ["director", "George Lucas"], ["rating", "PG"], ["release_date", Wed, 25 May 1977 00:00:00 UTC +00:00], ["title", "Star Wars"], ["updated_at", Wed, 14 Aug 2013 09:22:11 UTC +00:00]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "movies" ("created_at", "description", "director", "rating", "release_date", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["created_at", Wed, 14 Aug 2013 09:22:11 UTC +00:00], ["description", nil], ["director", "Ridley Scott"], ["rating", "PG"], ["release_date", Fri, 25 Jun 1982 00:00:00 UTC +00:00], ["title", "Blade Runner"], ["updated_at", Wed, 14 Aug 2013 09:22:11 UTC +00:00]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "movies" ("created_at", "description", "director", "rating", "release_date", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["created_at", Wed, 14 Aug 2013 09:22:11 UTC +00:00], ["description", nil], ["director", ""], ["rating", "R"], ["release_date", Fri, 25 May 1979 00:00:00 UTC +00:00], ["title", "Alien"], ["updated_at", Wed, 14 Aug 2013 09:22:11 UTC +00:00]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "movies" ("created_at", "description", "director", "rating", "release_date", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["created_at", Wed, 14 Aug 2013 09:22:11 UTC +00:00], ["description", nil], ["director", "George Lucas"], ["rating", "R"], ["release_date", Thu, 11 Mar 1971 00:00:00 UTC +00:00], ["title", "THX-1138"], ["updated_at", Wed, 14 Aug 2013 09:22:11 UTC +00:00]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mMovie Load (0.2ms)[0m  SELECT "movies".* FROM "movies" WHERE "movies"."title" = 'Alien' LIMIT 1
+
+
+Started GET "/movies/3" for 127.0.0.1 at 2013-08-14 02:22:11 -0700
+  Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mMovie Load (5.7ms)[0m  [1mSELECT "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT 1[0m  [["id", "3"]]
+Rendered movies/show.html.haml within layouts/application (44.3ms)
+Completed 500 Internal Server Error in 52ms
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (31.3ms)[0m  INSERT INTO "movies" ("created_at", "description", "director", "rating", "release_date", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["created_at", Wed, 14 Aug 2013 09:22:56 UTC +00:00], ["description", nil], ["director", "George Lucas"], ["rating", "PG"], ["release_date", Wed, 25 May 1977 00:00:00 UTC +00:00], ["title", "Star Wars"], ["updated_at", Wed, 14 Aug 2013 09:22:56 UTC +00:00]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "movies" ("created_at", "description", "director", "rating", "release_date", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["created_at", Wed, 14 Aug 2013 09:22:56 UTC +00:00], ["description", nil], ["director", "Ridley Scott"], ["rating", "PG"], ["release_date", Fri, 25 Jun 1982 00:00:00 UTC +00:00], ["title", "Blade Runner"], ["updated_at", Wed, 14 Aug 2013 09:22:56 UTC +00:00]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "movies" ("created_at", "description", "director", "rating", "release_date", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["created_at", Wed, 14 Aug 2013 09:22:56 UTC +00:00], ["description", nil], ["director", ""], ["rating", "R"], ["release_date", Fri, 25 May 1979 00:00:00 UTC +00:00], ["title", "Alien"], ["updated_at", Wed, 14 Aug 2013 09:22:56 UTC +00:00]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (2.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "movies" ("created_at", "description", "director", "rating", "release_date", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["created_at", Wed, 14 Aug 2013 09:22:56 UTC +00:00], ["description", nil], ["director", "George Lucas"], ["rating", "R"], ["release_date", Thu, 11 Mar 1971 00:00:00 UTC +00:00], ["title", "THX-1138"], ["updated_at", Wed, 14 Aug 2013 09:22:56 UTC +00:00]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mMovie Load (0.2ms)[0m  [1mSELECT "movies".* FROM "movies" WHERE "movies"."title" = 'Alien' LIMIT 1[0m
+
+
+Started GET "/movies/3/edit" for 127.0.0.1 at 2013-08-14 02:22:56 -0700
+  Processing by MoviesController#edit as HTML
+  Parameters: {"id"=>"3"}
+  [1m[35mMovie Load (0.2ms)[0m  SELECT "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT 1  [["id", "3"]]
+Rendered movies/edit.html.haml within layouts/application (8.2ms)
+Completed 200 OK in 135ms (Views: 133.6ms | ActiveRecord: 0.2ms)
+
+
+Started PUT "/movies/3" for 127.0.0.1 at 2013-08-14 02:22:56 -0700
+  Processing by MoviesController#update as HTML
+  Parameters: {"utf8"=>"✓", "movie"=>{"title"=>"Alien", "rating"=>"R", "director"=>"Ridley Scott", "release_date(1i)"=>"1979", "release_date(2i)"=>"5", "release_date(3i)"=>"25"}, "commit"=>"Update Movie Info", "id"=>"3"}
+  [1m[36mMovie Load (0.1ms)[0m  [1mSELECT "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT 1[0m  [["id", "3"]]
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mUPDATE "movies" SET "director" = 'Ridley Scott', "updated_at" = '2013-08-14 09:22:56.999690' WHERE "movies"."id" = 3[0m
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://www.example.com/movies/3
+Completed 302 Found in 5ms
+
+
+Started GET "/movies/3" for 127.0.0.1 at 2013-08-14 02:22:57 -0700
+  Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mMovie Load (0.1ms)[0m  [1mSELECT "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT 1[0m  [["id", "3"]]
+Rendered movies/show.html.haml within layouts/application (28.5ms)
+Completed 500 Internal Server Error in 31ms
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "movies" ("created_at", "description", "director", "rating", "release_date", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["created_at", Wed, 14 Aug 2013 09:22:57 UTC +00:00], ["description", nil], ["director", "George Lucas"], ["rating", "PG"], ["release_date", Wed, 25 May 1977 00:00:00 UTC +00:00], ["title", "Star Wars"], ["updated_at", Wed, 14 Aug 2013 09:22:57 UTC +00:00]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "movies" ("created_at", "description", "director", "rating", "release_date", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["created_at", Wed, 14 Aug 2013 09:22:57 UTC +00:00], ["description", nil], ["director", "Ridley Scott"], ["rating", "PG"], ["release_date", Fri, 25 Jun 1982 00:00:00 UTC +00:00], ["title", "Blade Runner"], ["updated_at", Wed, 14 Aug 2013 09:22:57 UTC +00:00]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.7ms)[0m  [1mINSERT INTO "movies" ("created_at", "description", "director", "rating", "release_date", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["created_at", Wed, 14 Aug 2013 09:22:57 UTC +00:00], ["description", nil], ["director", ""], ["rating", "R"], ["release_date", Fri, 25 May 1979 00:00:00 UTC +00:00], ["title", "Alien"], ["updated_at", Wed, 14 Aug 2013 09:22:57 UTC +00:00]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "movies" ("created_at", "description", "director", "rating", "release_date", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["created_at", Wed, 14 Aug 2013 09:22:57 UTC +00:00], ["description", nil], ["director", "George Lucas"], ["rating", "R"], ["release_date", Thu, 11 Mar 1971 00:00:00 UTC +00:00], ["title", "THX-1138"], ["updated_at", Wed, 14 Aug 2013 09:22:57 UTC +00:00]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mMovie Load (0.1ms)[0m  SELECT "movies".* FROM "movies" WHERE "movies"."title" = 'Star Wars' LIMIT 1
+
+
+Started GET "/movies/1" for 127.0.0.1 at 2013-08-14 02:22:57 -0700
+  Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mMovie Load (0.1ms)[0m  [1mSELECT "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT 1[0m  [["id", "1"]]
+Rendered movies/show.html.haml within layouts/application (91.6ms)
+Completed 500 Internal Server Error in 93ms
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (2.1ms)[0m  [1mINSERT INTO "movies" ("created_at", "description", "director", "rating", "release_date", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["created_at", Wed, 14 Aug 2013 09:22:57 UTC +00:00], ["description", nil], ["director", "George Lucas"], ["rating", "PG"], ["release_date", Wed, 25 May 1977 00:00:00 UTC +00:00], ["title", "Star Wars"], ["updated_at", Wed, 14 Aug 2013 09:22:57 UTC +00:00]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "movies" ("created_at", "description", "director", "rating", "release_date", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["created_at", Wed, 14 Aug 2013 09:22:57 UTC +00:00], ["description", nil], ["director", "Ridley Scott"], ["rating", "PG"], ["release_date", Fri, 25 Jun 1982 00:00:00 UTC +00:00], ["title", "Blade Runner"], ["updated_at", Wed, 14 Aug 2013 09:22:57 UTC +00:00]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "movies" ("created_at", "description", "director", "rating", "release_date", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["created_at", Wed, 14 Aug 2013 09:22:57 UTC +00:00], ["description", nil], ["director", ""], ["rating", "R"], ["release_date", Fri, 25 May 1979 00:00:00 UTC +00:00], ["title", "Alien"], ["updated_at", Wed, 14 Aug 2013 09:22:57 UTC +00:00]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "movies" ("created_at", "description", "director", "rating", "release_date", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["created_at", Wed, 14 Aug 2013 09:22:57 UTC +00:00], ["description", nil], ["director", "George Lucas"], ["rating", "R"], ["release_date", Thu, 11 Mar 1971 00:00:00 UTC +00:00], ["title", "THX-1138"], ["updated_at", Wed, 14 Aug 2013 09:22:57 UTC +00:00]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mMovie Load (0.2ms)[0m  SELECT "movies".* FROM "movies" WHERE "movies"."title" = 'Alien' LIMIT 1
+
+
+Started GET "/movies/3" for 127.0.0.1 at 2013-08-14 02:22:57 -0700
+  Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mMovie Load (0.1ms)[0m  [1mSELECT "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT 1[0m  [["id", "3"]]
+Rendered movies/show.html.haml within layouts/application (23.7ms)
+Completed 500 Internal Server Error in 26ms
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (36.3ms)[0m  INSERT INTO "movies" ("created_at", "description", "director", "rating", "release_date", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["created_at", Wed, 14 Aug 2013 09:26:54 UTC +00:00], ["description", nil], ["director", "George Lucas"], ["rating", "PG"], ["release_date", Wed, 25 May 1977 00:00:00 UTC +00:00], ["title", "Star Wars"], ["updated_at", Wed, 14 Aug 2013 09:26:54 UTC +00:00]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "movies" ("created_at", "description", "director", "rating", "release_date", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["created_at", Wed, 14 Aug 2013 09:26:54 UTC +00:00], ["description", nil], ["director", "Ridley Scott"], ["rating", "PG"], ["release_date", Fri, 25 Jun 1982 00:00:00 UTC +00:00], ["title", "Blade Runner"], ["updated_at", Wed, 14 Aug 2013 09:26:54 UTC +00:00]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "movies" ("created_at", "description", "director", "rating", "release_date", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["created_at", Wed, 14 Aug 2013 09:26:54 UTC +00:00], ["description", nil], ["director", ""], ["rating", "R"], ["release_date", Fri, 25 May 1979 00:00:00 UTC +00:00], ["title", "Alien"], ["updated_at", Wed, 14 Aug 2013 09:26:54 UTC +00:00]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "movies" ("created_at", "description", "director", "rating", "release_date", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["created_at", Wed, 14 Aug 2013 09:26:54 UTC +00:00], ["description", nil], ["director", "George Lucas"], ["rating", "R"], ["release_date", Thu, 11 Mar 1971 00:00:00 UTC +00:00], ["title", "THX-1138"], ["updated_at", Wed, 14 Aug 2013 09:26:54 UTC +00:00]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mMovie Load (0.3ms)[0m  [1mSELECT "movies".* FROM "movies" WHERE "movies"."title" = 'Alien' LIMIT 1[0m
+
+
+Started GET "/movies/3/edit" for 127.0.0.1 at 2013-08-14 02:26:55 -0700
+  Processing by MoviesController#edit as HTML
+  Parameters: {"id"=>"3"}
+  [1m[35mMovie Load (0.1ms)[0m  SELECT "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT 1  [["id", "3"]]
+Rendered movies/edit.html.haml within layouts/application (9.3ms)
+Completed 200 OK in 149ms (Views: 147.5ms | ActiveRecord: 0.1ms)
+
+
+Started PUT "/movies/3" for 127.0.0.1 at 2013-08-14 02:26:55 -0700
+  Processing by MoviesController#update as HTML
+  Parameters: {"utf8"=>"✓", "movie"=>{"title"=>"Alien", "rating"=>"R", "director"=>"Ridley Scott", "release_date(1i)"=>"1979", "release_date(2i)"=>"5", "release_date(3i)"=>"25"}, "commit"=>"Update Movie Info", "id"=>"3"}
+  [1m[36mMovie Load (0.1ms)[0m  [1mSELECT "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT 1[0m  [["id", "3"]]
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mUPDATE "movies" SET "director" = 'Ridley Scott', "updated_at" = '2013-08-14 09:26:55.915295' WHERE "movies"."id" = 3[0m
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://www.example.com/movies/3
+Completed 302 Found in 4ms
+
+
+Started GET "/movies/3" for 127.0.0.1 at 2013-08-14 02:26:55 -0700
+  Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mMovie Load (0.1ms)[0m  [1mSELECT "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT 1[0m  [["id", "3"]]
+Rendered movies/show.html.haml within layouts/application (29.3ms)
+Completed 500 Internal Server Error in 32ms
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "movies" ("created_at", "description", "director", "rating", "release_date", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["created_at", Wed, 14 Aug 2013 09:26:55 UTC +00:00], ["description", nil], ["director", "George Lucas"], ["rating", "PG"], ["release_date", Wed, 25 May 1977 00:00:00 UTC +00:00], ["title", "Star Wars"], ["updated_at", Wed, 14 Aug 2013 09:26:55 UTC +00:00]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (15.4ms)[0m  INSERT INTO "movies" ("created_at", "description", "director", "rating", "release_date", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["created_at", Wed, 14 Aug 2013 09:26:55 UTC +00:00], ["description", nil], ["director", "Ridley Scott"], ["rating", "PG"], ["release_date", Fri, 25 Jun 1982 00:00:00 UTC +00:00], ["title", "Blade Runner"], ["updated_at", Wed, 14 Aug 2013 09:26:55 UTC +00:00]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "movies" ("created_at", "description", "director", "rating", "release_date", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["created_at", Wed, 14 Aug 2013 09:26:55 UTC +00:00], ["description", nil], ["director", ""], ["rating", "R"], ["release_date", Fri, 25 May 1979 00:00:00 UTC +00:00], ["title", "Alien"], ["updated_at", Wed, 14 Aug 2013 09:26:55 UTC +00:00]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "movies" ("created_at", "description", "director", "rating", "release_date", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["created_at", Wed, 14 Aug 2013 09:26:55 UTC +00:00], ["description", nil], ["director", "George Lucas"], ["rating", "R"], ["release_date", Thu, 11 Mar 1971 00:00:00 UTC +00:00], ["title", "THX-1138"], ["updated_at", Wed, 14 Aug 2013 09:26:55 UTC +00:00]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mMovie Load (0.2ms)[0m  SELECT "movies".* FROM "movies" WHERE "movies"."title" = 'Star Wars' LIMIT 1
+
+
+Started GET "/movies/1" for 127.0.0.1 at 2013-08-14 02:26:56 -0700
+  Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mMovie Load (0.1ms)[0m  [1mSELECT "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT 1[0m  [["id", "1"]]
+Rendered movies/show.html.haml within layouts/application (83.5ms)
+Completed 500 Internal Server Error in 85ms
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "movies" ("created_at", "description", "director", "rating", "release_date", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["created_at", Wed, 14 Aug 2013 09:26:56 UTC +00:00], ["description", nil], ["director", "George Lucas"], ["rating", "PG"], ["release_date", Wed, 25 May 1977 00:00:00 UTC +00:00], ["title", "Star Wars"], ["updated_at", Wed, 14 Aug 2013 09:26:56 UTC +00:00]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "movies" ("created_at", "description", "director", "rating", "release_date", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["created_at", Wed, 14 Aug 2013 09:26:56 UTC +00:00], ["description", nil], ["director", "Ridley Scott"], ["rating", "PG"], ["release_date", Fri, 25 Jun 1982 00:00:00 UTC +00:00], ["title", "Blade Runner"], ["updated_at", Wed, 14 Aug 2013 09:26:56 UTC +00:00]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "movies" ("created_at", "description", "director", "rating", "release_date", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["created_at", Wed, 14 Aug 2013 09:26:56 UTC +00:00], ["description", nil], ["director", ""], ["rating", "R"], ["release_date", Fri, 25 May 1979 00:00:00 UTC +00:00], ["title", "Alien"], ["updated_at", Wed, 14 Aug 2013 09:26:56 UTC +00:00]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "movies" ("created_at", "description", "director", "rating", "release_date", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["created_at", Wed, 14 Aug 2013 09:26:56 UTC +00:00], ["description", nil], ["director", "George Lucas"], ["rating", "R"], ["release_date", Thu, 11 Mar 1971 00:00:00 UTC +00:00], ["title", "THX-1138"], ["updated_at", Wed, 14 Aug 2013 09:26:56 UTC +00:00]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mMovie Load (0.2ms)[0m  SELECT "movies".* FROM "movies" WHERE "movies"."title" = 'Alien' LIMIT 1
+
+
+Started GET "/movies/3" for 127.0.0.1 at 2013-08-14 02:26:56 -0700
+  Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mMovie Load (0.0ms)[0m  [1mSELECT "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT 1[0m  [["id", "3"]]
+Rendered movies/show.html.haml within layouts/application (28.8ms)
+Completed 500 Internal Server Error in 32ms
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (35.2ms)[0m  INSERT INTO "movies" ("created_at", "description", "director", "rating", "release_date", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["created_at", Wed, 14 Aug 2013 09:30:36 UTC +00:00], ["description", nil], ["director", "George Lucas"], ["rating", "PG"], ["release_date", Wed, 25 May 1977 00:00:00 UTC +00:00], ["title", "Star Wars"], ["updated_at", Wed, 14 Aug 2013 09:30:36 UTC +00:00]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "movies" ("created_at", "description", "director", "rating", "release_date", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["created_at", Wed, 14 Aug 2013 09:30:36 UTC +00:00], ["description", nil], ["director", "Ridley Scott"], ["rating", "PG"], ["release_date", Fri, 25 Jun 1982 00:00:00 UTC +00:00], ["title", "Blade Runner"], ["updated_at", Wed, 14 Aug 2013 09:30:36 UTC +00:00]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "movies" ("created_at", "description", "director", "rating", "release_date", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["created_at", Wed, 14 Aug 2013 09:30:36 UTC +00:00], ["description", nil], ["director", ""], ["rating", "R"], ["release_date", Fri, 25 May 1979 00:00:00 UTC +00:00], ["title", "Alien"], ["updated_at", Wed, 14 Aug 2013 09:30:36 UTC +00:00]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "movies" ("created_at", "description", "director", "rating", "release_date", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["created_at", Wed, 14 Aug 2013 09:30:36 UTC +00:00], ["description", nil], ["director", "George Lucas"], ["rating", "R"], ["release_date", Thu, 11 Mar 1971 00:00:00 UTC +00:00], ["title", "THX-1138"], ["updated_at", Wed, 14 Aug 2013 09:30:36 UTC +00:00]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mMovie Load (0.3ms)[0m  [1mSELECT "movies".* FROM "movies" WHERE "movies"."title" = 'Alien' LIMIT 1[0m
+
+
+Started GET "/movies/3/edit" for 127.0.0.1 at 2013-08-14 02:30:36 -0700
+  Processing by MoviesController#edit as HTML
+  Parameters: {"id"=>"3"}
+  [1m[35mMovie Load (0.2ms)[0m  SELECT "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT 1  [["id", "3"]]
+Rendered movies/edit.html.haml within layouts/application (8.2ms)
+Completed 200 OK in 140ms (Views: 139.0ms | ActiveRecord: 0.2ms)
+
+
+Started PUT "/movies/3" for 127.0.0.1 at 2013-08-14 02:30:37 -0700
+  Processing by MoviesController#update as HTML
+  Parameters: {"utf8"=>"✓", "movie"=>{"title"=>"Alien", "rating"=>"R", "director"=>"Ridley Scott", "release_date(1i)"=>"1979", "release_date(2i)"=>"5", "release_date(3i)"=>"25"}, "commit"=>"Update Movie Info", "id"=>"3"}
+  [1m[36mMovie Load (0.1ms)[0m  [1mSELECT "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT 1[0m  [["id", "3"]]
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mUPDATE "movies" SET "director" = 'Ridley Scott', "updated_at" = '2013-08-14 09:30:37.610420' WHERE "movies"."id" = 3[0m
+  [1m[35m (0.5ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://www.example.com/movies/3
+Completed 302 Found in 5ms
+
+
+Started GET "/movies/3" for 127.0.0.1 at 2013-08-14 02:30:37 -0700
+  Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mMovie Load (0.1ms)[0m  [1mSELECT "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT 1[0m  [["id", "3"]]
+ERROR: compiling _app_views_movies_show_html_haml___266044388_101849340 RAISED /home/ubuntu/Documents/hw4_rottenpotatoes/app/views/movies/show.html.haml:18: unknown regexp options - fd
+/home/ubuntu/Documents/hw4_rottenpotatoes/app/views/movies/show.html.haml:18: syntax error, unexpected tIDENTIFIER, expecting ')'
+...me Director', /movies/find_mwsd(@movie.director)
+...                               ^
+Function body:           def _app_views_movies_show_html_haml___266044388_101849340(local_assigns, output_buffer)
+            _old_virtual_path, @virtual_path = @virtual_path, "movies/show";_old_output_buffer = @output_buffer;;begin;extend Haml::Helpers;_hamlout = @haml_buffer = Haml::Buffer.new(@haml_buffer, {:autoclose=>["meta", "img", "link", "br", "hr", "input", "area", "param", "col", "base"], :preserve=>["textarea", "pre", "code"], :attr_wrapper=>"'", :ugly=>true, :format=>:html5, :encoding=>"UTF-8", :escape_html=>true, :escape_attrs=>true});_erbout = _hamlout.buffer;__in_erb_template = true;;_hamlout.buffer << "<h2>#{
+
+"Details about #{Haml::Helpers.html_escape((@movie.title))}"
+}</h2>\n<ul id='details'>\n<li>\nRating:\n#{
+
+
+
+_hamlout.format_script_false_false_false_true_false_true_true(( @movie.rating
+));}\n</li>\n<li>\nReleased on:\n#{
+
+_hamlout.format_script_false_false_false_true_false_true_true(( @movie.release_date.strftime("%B %d, %Y")
+));}\n</li>\n</ul>\n<h3>Description:</h3>\n<p id='description'>#{
+
+
+_hamlout.format_script_false_true_false_true_false_true_true((@movie.description
+));}</p>\n#{
+_hamlout.format_script_false_false_false_true_false_true_true(( link_to 'Edit', edit_movie_path(@movie)
+));}\n#{_hamlout.format_script_false_false_false_true_false_true_true(( link_to 'Find Movies With Same Director', /movies/find_mwsd(@movie.director)
+));}\n#{_hamlout.format_script_false_false_false_true_false_true_true(( button_to 'Delete', movie_path(@movie), :method => :delete, :confirm => 'Are you sure?'
+));}\n#{_hamlout.format_script_false_false_false_true_false_true_true(( link_to 'Back to movie list', movies_path
+));}\n";::Haml::Util.html_safe(_erbout);ensure;@haml_buffer = @haml_buffer.upper if @haml_buffer;end;
+          ensure
+            @virtual_path, @output_buffer = _old_virtual_path, _old_output_buffer
+          end
+Backtrace: /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_view/template.rb:282:in `module_eval'
+/usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_view/template.rb:282:in `compile'
+/usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_view/template.rb:190:in `compile!'
+/usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_view/template.rb:143:in `block in render'
+/usr/local/lib/ruby/gems/1.9.1/gems/activesupport-3.1.0/lib/active_support/notifications.rb:55:in `instrument'
+/usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_view/template.rb:142:in `render'
+/usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_view/renderer/template_renderer.rb:40:in `block (2 levels) in render_template'
+/usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_view/renderer/abstract_renderer.rb:33:in `block in instrument'
+/usr/local/lib/ruby/gems/1.9.1/gems/activesupport-3.1.0/lib/active_support/notifications.rb:53:in `block in instrument'
+/usr/local/lib/ruby/gems/1.9.1/gems/activesupport-3.1.0/lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+/usr/local/lib/ruby/gems/1.9.1/gems/activesupport-3.1.0/lib/active_support/notifications.rb:53:in `instrument'
+/usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_view/renderer/abstract_renderer.rb:33:in `instrument'
+/usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_view/renderer/template_renderer.rb:39:in `block in render_template'
+/usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_view/renderer/template_renderer.rb:47:in `render_with_layout'
+/usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_view/renderer/template_renderer.rb:38:in `render_template'
+/usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_view/renderer/template_renderer.rb:12:in `block in render'
+/usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_view/renderer/abstract_renderer.rb:22:in `wrap_formats'
+/usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_view/renderer/template_renderer.rb:9:in `render'
+/usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_view/renderer/renderer.rb:36:in `render_template'
+/usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_view/renderer/renderer.rb:17:in `render'
+/usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/abstract_controller/rendering.rb:120:in `_render_template'
+/usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_controller/metal/streaming.rb:250:in `_render_template'
+/usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/abstract_controller/rendering.rb:114:in `render_to_body'
+/usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_controller/metal/renderers.rb:30:in `render_to_body'
+/usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_controller/metal/compatibility.rb:43:in `render_to_body'
+/usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/abstract_controller/rendering.rb:99:in `render'
+/usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_controller/metal/rendering.rb:16:in `render'
+/usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_controller/metal/instrumentation.rb:40:in `block (2 levels) in render'
+/usr/local/lib/ruby/gems/1.9.1/gems/activesupport-3.1.0/lib/active_support/core_ext/benchmark.rb:5:in `block in ms'
+/usr/local/lib/ruby/1.9.1/benchmark.rb:310:in `realtime'
+/usr/local/lib/ruby/gems/1.9.1/gems/activesupport-3.1.0/lib/active_support/core_ext/benchmark.rb:5:in `ms'
+/usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_controller/metal/instrumentation.rb:40:in `block in render'
+/usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_controller/metal/instrumentation.rb:78:in `cleanup_view_runtime'
+/usr/local/lib/ruby/gems/1.9.1/gems/activerecord-3.1.0/lib/active_record/railties/controller_runtime.rb:24:in `cleanup_view_runtime'
+/usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_controller/metal/instrumentation.rb:39:in `render'
+/usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_controller/metal/implicit_render.rb:10:in `default_render'
+/usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_controller/metal/implicit_render.rb:5:in `send_action'
+/usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/abstract_controller/base.rb:167:in `process_action'
+/usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_controller/metal/rendering.rb:10:in `process_action'
+/usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/abstract_controller/callbacks.rb:18:in `block in process_action'
+/usr/local/lib/ruby/gems/1.9.1/gems/activesupport-3.1.0/lib/active_support/callbacks.rb:416:in `_run__716341151__process_action__461707032__callbacks'
+/usr/local/lib/ruby/gems/1.9.1/gems/activesupport-3.1.0/lib/active_support/callbacks.rb:386:in `_run_process_action_callbacks'
+/usr/local/lib/ruby/gems/1.9.1/gems/activesupport-3.1.0/lib/active_support/callbacks.rb:81:in `run_callbacks'
+/usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/abstract_controller/callbacks.rb:17:in `process_action'
+/usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_controller/metal/rescue.rb:17:in `process_action'
+/usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_controller/metal/instrumentation.rb:30:in `block in process_action'
+/usr/local/lib/ruby/gems/1.9.1/gems/activesupport-3.1.0/lib/active_support/notifications.rb:53:in `block in instrument'
+/usr/local/lib/ruby/gems/1.9.1/gems/activesupport-3.1.0/lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+/usr/local/lib/ruby/gems/1.9.1/gems/activesupport-3.1.0/lib/active_support/notifications.rb:53:in `instrument'
+/usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_controller/metal/instrumentation.rb:29:in `process_action'
+/usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_controller/metal/params_wrapper.rb:201:in `process_action'
+/usr/local/lib/ruby/gems/1.9.1/gems/activerecord-3.1.0/lib/active_record/railties/controller_runtime.rb:18:in `process_action'
+/usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/abstract_controller/base.rb:121:in `process'
+/usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/abstract_controller/rendering.rb:45:in `process'
+/usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_controller/metal.rb:193:in `dispatch'
+/usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_controller/metal/rack_delegation.rb:14:in `dispatch'
+/usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_controller/metal.rb:236:in `block in action'
+/usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_dispatch/routing/route_set.rb:65:in `call'
+/usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_dispatch/routing/route_set.rb:65:in `dispatch'
+/usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_dispatch/routing/route_set.rb:29:in `call'
+/usr/local/lib/ruby/gems/1.9.1/gems/rack-mount-0.8.3/lib/rack/mount/route_set.rb:152:in `block in call'
+/usr/local/lib/ruby/gems/1.9.1/gems/rack-mount-0.8.3/lib/rack/mount/code_generation.rb:96:in `block in recognize'
+/usr/local/lib/ruby/gems/1.9.1/gems/rack-mount-0.8.3/lib/rack/mount/code_generation.rb:96:in `optimized_each'
+/usr/local/lib/ruby/gems/1.9.1/gems/rack-mount-0.8.3/lib/rack/mount/code_generation.rb:95:in `recognize'
+/usr/local/lib/ruby/gems/1.9.1/gems/rack-mount-0.8.3/lib/rack/mount/route_set.rb:141:in `call'
+/usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_dispatch/routing/route_set.rb:531:in `call'
+/usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_dispatch/middleware/best_standards_support.rb:17:in `call'
+/usr/local/lib/ruby/gems/1.9.1/gems/rack-1.3.6/lib/rack/etag.rb:23:in `call'
+/usr/local/lib/ruby/gems/1.9.1/gems/rack-1.3.6/lib/rack/conditionalget.rb:25:in `call'
+/usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_dispatch/middleware/head.rb:14:in `call'
+/usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_dispatch/middleware/params_parser.rb:21:in `call'
+/usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_dispatch/middleware/flash.rb:243:in `call'
+/usr/local/lib/ruby/gems/1.9.1/gems/rack-1.3.6/lib/rack/session/abstract/id.rb:195:in `context'
+/usr/local/lib/ruby/gems/1.9.1/gems/rack-1.3.6/lib/rack/session/abstract/id.rb:190:in `call'
+/usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_dispatch/middleware/cookies.rb:326:in `call'
+/usr/local/lib/ruby/gems/1.9.1/gems/activerecord-3.1.0/lib/active_record/query_cache.rb:62:in `call'
+/usr/local/lib/ruby/gems/1.9.1/gems/activerecord-3.1.0/lib/active_record/connection_adapters/abstract/connection_pool.rb:477:in `call'
+/usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+/usr/local/lib/ruby/gems/1.9.1/gems/activesupport-3.1.0/lib/active_support/callbacks.rb:392:in `_run_call_callbacks'
+/usr/local/lib/ruby/gems/1.9.1/gems/activesupport-3.1.0/lib/active_support/callbacks.rb:81:in `run_callbacks'
+/usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_dispatch/middleware/callbacks.rb:28:in `call'
+/usr/local/lib/ruby/gems/1.9.1/gems/rack-1.3.6/lib/rack/sendfile.rb:101:in `call'
+/usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_dispatch/middleware/remote_ip.rb:48:in `call'
+/usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_dispatch/middleware/show_exceptions.rb:47:in `call'
+/usr/local/lib/ruby/gems/1.9.1/gems/cucumber-rails-1.3.0/lib/cucumber/rails/action_controller.rb:10:in `call'
+/usr/local/lib/ruby/gems/1.9.1/gems/railties-3.1.0/lib/rails/rack/logger.rb:13:in `call'
+/usr/local/lib/ruby/gems/1.9.1/gems/rack-1.3.6/lib/rack/methodoverride.rb:24:in `call'
+/usr/local/lib/ruby/gems/1.9.1/gems/rack-1.3.6/lib/rack/runtime.rb:17:in `call'
+/usr/local/lib/ruby/gems/1.9.1/gems/activesupport-3.1.0/lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+/usr/local/lib/ruby/gems/1.9.1/gems/rack-1.3.6/lib/rack/lock.rb:15:in `call'
+/usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_dispatch/middleware/static.rb:53:in `call'
+/usr/local/lib/ruby/gems/1.9.1/gems/railties-3.1.0/lib/rails/engine.rb:455:in `call'
+/usr/local/lib/ruby/gems/1.9.1/gems/rack-1.3.6/lib/rack/urlmap.rb:52:in `block in call'
+/usr/local/lib/ruby/gems/1.9.1/gems/rack-1.3.6/lib/rack/urlmap.rb:46:in `each'
+/usr/local/lib/ruby/gems/1.9.1/gems/rack-1.3.6/lib/rack/urlmap.rb:46:in `call'
+/usr/local/lib/ruby/gems/1.9.1/gems/rack-test-0.6.1/lib/rack/mock_session.rb:30:in `request'
+/usr/local/lib/ruby/gems/1.9.1/gems/rack-test-0.6.1/lib/rack/test.rb:219:in `process_request'
+/usr/local/lib/ruby/gems/1.9.1/gems/rack-test-0.6.1/lib/rack/test.rb:57:in `get'
+/usr/local/lib/ruby/1.9.1/forwardable.rb:182:in `get'
+/usr/local/lib/ruby/gems/1.9.1/gems/capybara-1.1.2/lib/capybara/rack_test/browser.rb:62:in `process'
+/usr/local/lib/ruby/gems/1.9.1/gems/capybara-1.1.2/lib/capybara/rack_test/browser.rb:39:in `block in follow_redirects!'
+/usr/local/lib/ruby/gems/1.9.1/gems/capybara-1.1.2/lib/capybara/rack_test/browser.rb:38:in `times'
+/usr/local/lib/ruby/gems/1.9.1/gems/capybara-1.1.2/lib/capybara/rack_test/browser.rb:38:in `follow_redirects!'
+/usr/local/lib/ruby/gems/1.9.1/gems/capybara-1.1.2/lib/capybara/rack_test/browser.rb:28:in `submit'
+/usr/local/lib/ruby/gems/1.9.1/gems/capybara-1.1.2/lib/capybara/rack_test/form.rb:64:in `submit'
+/usr/local/lib/ruby/gems/1.9.1/gems/capybara-1.1.2/lib/capybara/rack_test/node.rb:59:in `click'
+/usr/local/lib/ruby/gems/1.9.1/gems/cucumber-rails-1.3.0/lib/cucumber/rails/capybara/javascript_emulation.rb:16:in `click_with_javascript_emulation'
+/usr/local/lib/ruby/gems/1.9.1/gems/capybara-1.1.2/lib/capybara/node/element.rb:99:in `block in click'
+/usr/local/lib/ruby/gems/1.9.1/gems/capybara-1.1.2/lib/capybara/node/base.rb:46:in `wait_until'
+/usr/local/lib/ruby/gems/1.9.1/gems/capybara-1.1.2/lib/capybara/node/element.rb:99:in `click'
+/usr/local/lib/ruby/gems/1.9.1/gems/capybara-1.1.2/lib/capybara/node/actions.rb:38:in `click_button'
+(eval):2:in `click_button'
+/usr/local/lib/ruby/gems/1.9.1/gems/capybara-1.1.2/lib/capybara/dsl.rb:161:in `click_button'
+/home/ubuntu/Documents/hw4_rottenpotatoes/features/step_definitions/web_steps.rb:53:in `block in <top (required)>'
+/usr/local/lib/ruby/gems/1.9.1/gems/cucumber-1.1.8/lib/cucumber/core_ext/instance_exec.rb:48:in `instance_exec'
+/usr/local/lib/ruby/gems/1.9.1/gems/cucumber-1.1.8/lib/cucumber/core_ext/instance_exec.rb:48:in `block in cucumber_instance_exec'
+/usr/local/lib/ruby/gems/1.9.1/gems/cucumber-1.1.8/lib/cucumber/core_ext/instance_exec.rb:69:in `cucumber_run_with_backtrace_filtering'
+/usr/local/lib/ruby/gems/1.9.1/gems/cucumber-1.1.8/lib/cucumber/core_ext/instance_exec.rb:36:in `cucumber_instance_exec'
+/usr/local/lib/ruby/gems/1.9.1/gems/cucumber-1.1.8/lib/cucumber/rb_support/rb_step_definition.rb:62:in `invoke'
+/usr/local/lib/ruby/gems/1.9.1/gems/cucumber-1.1.8/lib/cucumber/step_match.rb:25:in `invoke'
+/usr/local/lib/ruby/gems/1.9.1/gems/cucumber-1.1.8/lib/cucumber/ast/step_invocation.rb:59:in `invoke'
+/usr/local/lib/ruby/gems/1.9.1/gems/cucumber-1.1.8/lib/cucumber/ast/step_invocation.rb:38:in `accept'
+/usr/local/lib/ruby/gems/1.9.1/gems/cucumber-1.1.8/lib/cucumber/ast/tree_walker.rb:99:in `block in visit_step'
+/usr/local/lib/ruby/gems/1.9.1/gems/cucumber-1.1.8/lib/cucumber/ast/tree_walker.rb:163:in `broadcast'
+/usr/local/lib/ruby/gems/1.9.1/gems/cucumber-1.1.8/lib/cucumber/ast/tree_walker.rb:98:in `visit_step'
+/usr/local/lib/ruby/gems/1.9.1/gems/cucumber-1.1.8/lib/cucumber/ast/step_collection.rb:15:in `block in accept'
+/usr/local/lib/ruby/gems/1.9.1/gems/cucumber-1.1.8/lib/cucumber/ast/step_collection.rb:14:in `each'
+/usr/local/lib/ruby/gems/1.9.1/gems/cucumber-1.1.8/lib/cucumber/ast/step_collection.rb:14:in `accept'
+/usr/local/lib/ruby/gems/1.9.1/gems/cucumber-1.1.8/lib/cucumber/ast/tree_walker.rb:93:in `block in visit_steps'
+/usr/local/lib/ruby/gems/1.9.1/gems/cucumber-1.1.8/lib/cucumber/ast/tree_walker.rb:163:in `broadcast'
+/usr/local/lib/ruby/gems/1.9.1/gems/cucumber-1.1.8/lib/cucumber/ast/tree_walker.rb:92:in `visit_steps'
+/usr/local/lib/ruby/gems/1.9.1/gems/cucumber-1.1.8/lib/cucumber/ast/scenario.rb:55:in `block (2 levels) in accept'
+/usr/local/lib/ruby/gems/1.9.1/gems/cucumber-1.1.8/lib/cucumber/runtime.rb:80:in `block (2 levels) in with_hooks'
+/usr/local/lib/ruby/gems/1.9.1/gems/cucumber-1.1.8/lib/cucumber/runtime.rb:96:in `before_and_after'
+/usr/local/lib/ruby/gems/1.9.1/gems/cucumber-1.1.8/lib/cucumber/runtime.rb:79:in `block in with_hooks'
+/usr/local/lib/ruby/gems/1.9.1/gems/cucumber-1.1.8/lib/cucumber/runtime/support_code.rb:120:in `call'
+/usr/local/lib/ruby/gems/1.9.1/gems/cucumber-1.1.8/lib/cucumber/runtime/support_code.rb:120:in `block (3 levels) in around'
+/usr/local/lib/ruby/gems/1.9.1/gems/cucumber-1.1.8/lib/cucumber/language_support/language_methods.rb:9:in `block in around'
+/usr/local/lib/ruby/gems/1.9.1/gems/cucumber-1.1.8/lib/cucumber/language_support/language_methods.rb:91:in `call'
+/usr/local/lib/ruby/gems/1.9.1/gems/cucumber-1.1.8/lib/cucumber/language_support/language_methods.rb:91:in `execute_around'
+/usr/local/lib/ruby/gems/1.9.1/gems/cucumber-1.1.8/lib/cucumber/language_support/language_methods.rb:8:in `around'
+/usr/local/lib/ruby/gems/1.9.1/gems/cucumber-1.1.8/lib/cucumber/runtime/support_code.rb:119:in `block (2 levels) in around'
+/usr/local/lib/ruby/gems/1.9.1/gems/cucumber-1.1.8/lib/cucumber/runtime/support_code.rb:117:in `call'
+/usr/local/lib/ruby/gems/1.9.1/gems/cucumber-1.1.8/lib/cucumber/runtime/support_code.rb:117:in `around'
+/usr/local/lib/ruby/gems/1.9.1/gems/cucumber-1.1.8/lib/cucumber/runtime.rb:91:in `around'
+/usr/local/lib/ruby/gems/1.9.1/gems/cucumber-1.1.8/lib/cucumber/runtime.rb:78:in `with_hooks'
+/usr/local/lib/ruby/gems/1.9.1/gems/cucumber-1.1.8/lib/cucumber/ast/scenario.rb:53:in `block in accept'
+/usr/local/lib/ruby/gems/1.9.1/gems/cucumber-1.1.8/lib/cucumber/ast/scenario.rb:108:in `with_visitor'
+/usr/local/lib/ruby/gems/1.9.1/gems/cucumber-1.1.8/lib/cucumber/ast/scenario.rb:47:in `accept'
+/usr/local/lib/ruby/gems/1.9.1/gems/cucumber-1.1.8/lib/cucumber/ast/tree_walker.rb:51:in `block in visit_feature_element'
+/usr/local/lib/ruby/gems/1.9.1/gems/cucumber-1.1.8/lib/cucumber/ast/tree_walker.rb:163:in `broadcast'
+/usr/local/lib/ruby/gems/1.9.1/gems/cucumber-1.1.8/lib/cucumber/ast/tree_walker.rb:50:in `visit_feature_element'
+/usr/local/lib/ruby/gems/1.9.1/gems/cucumber-1.1.8/lib/cucumber/ast/feature.rb:43:in `block in accept'
+/usr/local/lib/ruby/gems/1.9.1/gems/cucumber-1.1.8/lib/cucumber/ast/feature.rb:42:in `each'
+/usr/local/lib/ruby/gems/1.9.1/gems/cucumber-1.1.8/lib/cucumber/ast/feature.rb:42:in `accept'
+/usr/local/lib/ruby/gems/1.9.1/gems/cucumber-1.1.8/lib/cucumber/ast/tree_walker.rb:20:in `block in visit_feature'
+/usr/local/lib/ruby/gems/1.9.1/gems/cucumber-1.1.8/lib/cucumber/ast/tree_walker.rb:163:in `broadcast'
+/usr/local/lib/ruby/gems/1.9.1/gems/cucumber-1.1.8/lib/cucumber/ast/tree_walker.rb:19:in `visit_feature'
+/usr/local/lib/ruby/gems/1.9.1/gems/cucumber-1.1.8/lib/cucumber/ast/features.rb:29:in `block in accept'
+/usr/local/lib/ruby/gems/1.9.1/gems/cucumber-1.1.8/lib/cucumber/ast/features.rb:17:in `each'
+/usr/local/lib/ruby/gems/1.9.1/gems/cucumber-1.1.8/lib/cucumber/ast/features.rb:17:in `each'
+/usr/local/lib/ruby/gems/1.9.1/gems/cucumber-1.1.8/lib/cucumber/ast/features.rb:28:in `accept'
+/usr/local/lib/ruby/gems/1.9.1/gems/cucumber-1.1.8/lib/cucumber/ast/tree_walker.rb:14:in `block in visit_features'
+/usr/local/lib/ruby/gems/1.9.1/gems/cucumber-1.1.8/lib/cucumber/ast/tree_walker.rb:163:in `broadcast'
+/usr/local/lib/ruby/gems/1.9.1/gems/cucumber-1.1.8/lib/cucumber/ast/tree_walker.rb:13:in `visit_features'
+/usr/local/lib/ruby/gems/1.9.1/gems/cucumber-1.1.8/lib/cucumber/runtime.rb:46:in `run!'
+/usr/local/lib/ruby/gems/1.9.1/gems/cucumber-1.1.8/lib/cucumber/cli/main.rb:43:in `execute!'
+/usr/local/lib/ruby/gems/1.9.1/gems/cucumber-1.1.8/lib/cucumber/cli/main.rb:20:in `execute'
+/usr/local/lib/ruby/gems/1.9.1/gems/cucumber-1.1.8/bin/cucumber:14:in `<top (required)>'
+/usr/local/bin/cucumber:19:in `load'
+/usr/local/bin/cucumber:19:in `<main>'
+Rendered movies/show.html.haml within layouts/application (4.6ms)
+Completed 500 Internal Server Error in 7ms
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "movies" ("created_at", "description", "director", "rating", "release_date", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["created_at", Wed, 14 Aug 2013 09:30:37 UTC +00:00], ["description", nil], ["director", "George Lucas"], ["rating", "PG"], ["release_date", Wed, 25 May 1977 00:00:00 UTC +00:00], ["title", "Star Wars"], ["updated_at", Wed, 14 Aug 2013 09:30:37 UTC +00:00]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "movies" ("created_at", "description", "director", "rating", "release_date", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["created_at", Wed, 14 Aug 2013 09:30:37 UTC +00:00], ["description", nil], ["director", "Ridley Scott"], ["rating", "PG"], ["release_date", Fri, 25 Jun 1982 00:00:00 UTC +00:00], ["title", "Blade Runner"], ["updated_at", Wed, 14 Aug 2013 09:30:37 UTC +00:00]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "movies" ("created_at", "description", "director", "rating", "release_date", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["created_at", Wed, 14 Aug 2013 09:30:37 UTC +00:00], ["description", nil], ["director", ""], ["rating", "R"], ["release_date", Fri, 25 May 1979 00:00:00 UTC +00:00], ["title", "Alien"], ["updated_at", Wed, 14 Aug 2013 09:30:37 UTC +00:00]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "movies" ("created_at", "description", "director", "rating", "release_date", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["created_at", Wed, 14 Aug 2013 09:30:37 UTC +00:00], ["description", nil], ["director", "George Lucas"], ["rating", "R"], ["release_date", Thu, 11 Mar 1971 00:00:00 UTC +00:00], ["title", "THX-1138"], ["updated_at", Wed, 14 Aug 2013 09:30:37 UTC +00:00]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mMovie Load (0.2ms)[0m  SELECT "movies".* FROM "movies" WHERE "movies"."title" = 'Star Wars' LIMIT 1
+
+
+Started GET "/movies/1" for 127.0.0.1 at 2013-08-14 02:30:37 -0700
+  Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mMovie Load (0.1ms)[0m  [1mSELECT "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT 1[0m  [["id", "1"]]
+ERROR: compiling _app_views_movies_show_html_haml___266044388_101849340 RAISED /home/ubuntu/Documents/hw4_rottenpotatoes/app/views/movies/show.html.haml:18: unknown regexp options - fd
+/home/ubuntu/Documents/hw4_rottenpotatoes/app/views/movies/show.html.haml:18: syntax error, unexpected tIDENTIFIER, expecting ')'
+...me Director', /movies/find_mwsd(@movie.director)
+...                               ^
+Function body:           def _app_views_movies_show_html_haml___266044388_101849340(local_assigns, output_buffer)
+            _old_virtual_path, @virtual_path = @virtual_path, "movies/show";_old_output_buffer = @output_buffer;;begin;extend Haml::Helpers;_hamlout = @haml_buffer = Haml::Buffer.new(@haml_buffer, {:autoclose=>["meta", "img", "link", "br", "hr", "input", "area", "param", "col", "base"], :preserve=>["textarea", "pre", "code"], :attr_wrapper=>"'", :ugly=>true, :format=>:html5, :encoding=>"UTF-8", :escape_html=>true, :escape_attrs=>true});_erbout = _hamlout.buffer;__in_erb_template = true;;_hamlout.buffer << "<h2>#{
+
+"Details about #{Haml::Helpers.html_escape((@movie.title))}"
+}</h2>\n<ul id='details'>\n<li>\nRating:\n#{
+
+
+
+_hamlout.format_script_false_false_false_true_false_true_true(( @movie.rating
+));}\n</li>\n<li>\nReleased on:\n#{
+
+_hamlout.format_script_false_false_false_true_false_true_true(( @movie.release_date.strftime("%B %d, %Y")
+));}\n</li>\n</ul>\n<h3>Description:</h3>\n<p id='description'>#{
+
+
+_hamlout.format_script_false_true_false_true_false_true_true((@movie.description
+));}</p>\n#{
+_hamlout.format_script_false_false_false_true_false_true_true(( link_to 'Edit', edit_movie_path(@movie)
+));}\n#{_hamlout.format_script_false_false_false_true_false_true_true(( link_to 'Find Movies With Same Director', /movies/find_mwsd(@movie.director)
+));}\n#{_hamlout.format_script_false_false_false_true_false_true_true(( button_to 'Delete', movie_path(@movie), :method => :delete, :confirm => 'Are you sure?'
+));}\n#{_hamlout.format_script_false_false_false_true_false_true_true(( link_to 'Back to movie list', movies_path
+));}\n";::Haml::Util.html_safe(_erbout);ensure;@haml_buffer = @haml_buffer.upper if @haml_buffer;end;
+          ensure
+            @virtual_path, @output_buffer = _old_virtual_path, _old_output_buffer
+          end
+Backtrace: /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_view/template.rb:282:in `module_eval'
+/usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_view/template.rb:282:in `compile'
+/usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_view/template.rb:190:in `compile!'
+/usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_view/template.rb:143:in `block in render'
+/usr/local/lib/ruby/gems/1.9.1/gems/activesupport-3.1.0/lib/active_support/notifications.rb:55:in `instrument'
+/usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_view/template.rb:142:in `render'
+/usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_view/renderer/template_renderer.rb:40:in `block (2 levels) in render_template'
+/usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_view/renderer/abstract_renderer.rb:33:in `block in instrument'
+/usr/local/lib/ruby/gems/1.9.1/gems/activesupport-3.1.0/lib/active_support/notifications.rb:53:in `block in instrument'
+/usr/local/lib/ruby/gems/1.9.1/gems/activesupport-3.1.0/lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+/usr/local/lib/ruby/gems/1.9.1/gems/activesupport-3.1.0/lib/active_support/notifications.rb:53:in `instrument'
+/usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_view/renderer/abstract_renderer.rb:33:in `instrument'
+/usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_view/renderer/template_renderer.rb:39:in `block in render_template'
+/usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_view/renderer/template_renderer.rb:47:in `render_with_layout'
+/usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_view/renderer/template_renderer.rb:38:in `render_template'
+/usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_view/renderer/template_renderer.rb:12:in `block in render'
+/usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_view/renderer/abstract_renderer.rb:22:in `wrap_formats'
+/usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_view/renderer/template_renderer.rb:9:in `render'
+/usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_view/renderer/renderer.rb:36:in `render_template'
+/usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_view/renderer/renderer.rb:17:in `render'
+/usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/abstract_controller/rendering.rb:120:in `_render_template'
+/usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_controller/metal/streaming.rb:250:in `_render_template'
+/usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/abstract_controller/rendering.rb:114:in `render_to_body'
+/usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_controller/metal/renderers.rb:30:in `render_to_body'
+/usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_controller/metal/compatibility.rb:43:in `render_to_body'
+/usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/abstract_controller/rendering.rb:99:in `render'
+/usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_controller/metal/rendering.rb:16:in `render'
+/usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_controller/metal/instrumentation.rb:40:in `block (2 levels) in render'
+/usr/local/lib/ruby/gems/1.9.1/gems/activesupport-3.1.0/lib/active_support/core_ext/benchmark.rb:5:in `block in ms'
+/usr/local/lib/ruby/1.9.1/benchmark.rb:310:in `realtime'
+/usr/local/lib/ruby/gems/1.9.1/gems/activesupport-3.1.0/lib/active_support/core_ext/benchmark.rb:5:in `ms'
+/usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_controller/metal/instrumentation.rb:40:in `block in render'
+/usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_controller/metal/instrumentation.rb:78:in `cleanup_view_runtime'
+/usr/local/lib/ruby/gems/1.9.1/gems/activerecord-3.1.0/lib/active_record/railties/controller_runtime.rb:24:in `cleanup_view_runtime'
+/usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_controller/metal/instrumentation.rb:39:in `render'
+/usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_controller/metal/implicit_render.rb:10:in `default_render'
+/usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_controller/metal/implicit_render.rb:5:in `send_action'
+/usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/abstract_controller/base.rb:167:in `process_action'
+/usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_controller/metal/rendering.rb:10:in `process_action'
+/usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/abstract_controller/callbacks.rb:18:in `block in process_action'
+/usr/local/lib/ruby/gems/1.9.1/gems/activesupport-3.1.0/lib/active_support/callbacks.rb:416:in `_run__716341151__process_action__461707032__callbacks'
+/usr/local/lib/ruby/gems/1.9.1/gems/activesupport-3.1.0/lib/active_support/callbacks.rb:386:in `_run_process_action_callbacks'
+/usr/local/lib/ruby/gems/1.9.1/gems/activesupport-3.1.0/lib/active_support/callbacks.rb:81:in `run_callbacks'
+/usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/abstract_controller/callbacks.rb:17:in `process_action'
+/usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_controller/metal/rescue.rb:17:in `process_action'
+/usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_controller/metal/instrumentation.rb:30:in `block in process_action'
+/usr/local/lib/ruby/gems/1.9.1/gems/activesupport-3.1.0/lib/active_support/notifications.rb:53:in `block in instrument'
+/usr/local/lib/ruby/gems/1.9.1/gems/activesupport-3.1.0/lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+/usr/local/lib/ruby/gems/1.9.1/gems/activesupport-3.1.0/lib/active_support/notifications.rb:53:in `instrument'
+/usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_controller/metal/instrumentation.rb:29:in `process_action'
+/usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_controller/metal/params_wrapper.rb:201:in `process_action'
+/usr/local/lib/ruby/gems/1.9.1/gems/activerecord-3.1.0/lib/active_record/railties/controller_runtime.rb:18:in `process_action'
+/usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/abstract_controller/base.rb:121:in `process'
+/usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/abstract_controller/rendering.rb:45:in `process'
+/usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_controller/metal.rb:193:in `dispatch'
+/usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_controller/metal/rack_delegation.rb:14:in `dispatch'
+/usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_controller/metal.rb:236:in `block in action'
+/usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_dispatch/routing/route_set.rb:65:in `call'
+/usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_dispatch/routing/route_set.rb:65:in `dispatch'
+/usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_dispatch/routing/route_set.rb:29:in `call'
+/usr/local/lib/ruby/gems/1.9.1/gems/rack-mount-0.8.3/lib/rack/mount/route_set.rb:152:in `block in call'
+/usr/local/lib/ruby/gems/1.9.1/gems/rack-mount-0.8.3/lib/rack/mount/code_generation.rb:96:in `block in recognize'
+/usr/local/lib/ruby/gems/1.9.1/gems/rack-mount-0.8.3/lib/rack/mount/code_generation.rb:96:in `optimized_each'
+/usr/local/lib/ruby/gems/1.9.1/gems/rack-mount-0.8.3/lib/rack/mount/code_generation.rb:95:in `recognize'
+/usr/local/lib/ruby/gems/1.9.1/gems/rack-mount-0.8.3/lib/rack/mount/route_set.rb:141:in `call'
+/usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_dispatch/routing/route_set.rb:531:in `call'
+/usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_dispatch/middleware/best_standards_support.rb:17:in `call'
+/usr/local/lib/ruby/gems/1.9.1/gems/rack-1.3.6/lib/rack/etag.rb:23:in `call'
+/usr/local/lib/ruby/gems/1.9.1/gems/rack-1.3.6/lib/rack/conditionalget.rb:25:in `call'
+/usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_dispatch/middleware/head.rb:14:in `call'
+/usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_dispatch/middleware/params_parser.rb:21:in `call'
+/usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_dispatch/middleware/flash.rb:243:in `call'
+/usr/local/lib/ruby/gems/1.9.1/gems/rack-1.3.6/lib/rack/session/abstract/id.rb:195:in `context'
+/usr/local/lib/ruby/gems/1.9.1/gems/rack-1.3.6/lib/rack/session/abstract/id.rb:190:in `call'
+/usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_dispatch/middleware/cookies.rb:326:in `call'
+/usr/local/lib/ruby/gems/1.9.1/gems/activerecord-3.1.0/lib/active_record/query_cache.rb:62:in `call'
+/usr/local/lib/ruby/gems/1.9.1/gems/activerecord-3.1.0/lib/active_record/connection_adapters/abstract/connection_pool.rb:477:in `call'
+/usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+/usr/local/lib/ruby/gems/1.9.1/gems/activesupport-3.1.0/lib/active_support/callbacks.rb:392:in `_run_call_callbacks'
+/usr/local/lib/ruby/gems/1.9.1/gems/activesupport-3.1.0/lib/active_support/callbacks.rb:81:in `run_callbacks'
+/usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_dispatch/middleware/callbacks.rb:28:in `call'
+/usr/local/lib/ruby/gems/1.9.1/gems/rack-1.3.6/lib/rack/sendfile.rb:101:in `call'
+/usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_dispatch/middleware/remote_ip.rb:48:in `call'
+/usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_dispatch/middleware/show_exceptions.rb:47:in `call'
+/usr/local/lib/ruby/gems/1.9.1/gems/cucumber-rails-1.3.0/lib/cucumber/rails/action_controller.rb:10:in `call'
+/usr/local/lib/ruby/gems/1.9.1/gems/railties-3.1.0/lib/rails/rack/logger.rb:13:in `call'
+/usr/local/lib/ruby/gems/1.9.1/gems/rack-1.3.6/lib/rack/methodoverride.rb:24:in `call'
+/usr/local/lib/ruby/gems/1.9.1/gems/rack-1.3.6/lib/rack/runtime.rb:17:in `call'
+/usr/local/lib/ruby/gems/1.9.1/gems/activesupport-3.1.0/lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+/usr/local/lib/ruby/gems/1.9.1/gems/rack-1.3.6/lib/rack/lock.rb:15:in `call'
+/usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_dispatch/middleware/static.rb:53:in `call'
+/usr/local/lib/ruby/gems/1.9.1/gems/railties-3.1.0/lib/rails/engine.rb:455:in `call'
+/usr/local/lib/ruby/gems/1.9.1/gems/rack-1.3.6/lib/rack/urlmap.rb:52:in `block in call'
+/usr/local/lib/ruby/gems/1.9.1/gems/rack-1.3.6/lib/rack/urlmap.rb:46:in `each'
+/usr/local/lib/ruby/gems/1.9.1/gems/rack-1.3.6/lib/rack/urlmap.rb:46:in `call'
+/usr/local/lib/ruby/gems/1.9.1/gems/rack-test-0.6.1/lib/rack/mock_session.rb:30:in `request'
+/usr/local/lib/ruby/gems/1.9.1/gems/rack-test-0.6.1/lib/rack/test.rb:219:in `process_request'
+/usr/local/lib/ruby/gems/1.9.1/gems/rack-test-0.6.1/lib/rack/test.rb:57:in `get'
+/usr/local/lib/ruby/1.9.1/forwardable.rb:182:in `get'
+/usr/local/lib/ruby/gems/1.9.1/gems/capybara-1.1.2/lib/capybara/rack_test/browser.rb:62:in `process'
+/usr/local/lib/ruby/gems/1.9.1/gems/capybara-1.1.2/lib/capybara/rack_test/browser.rb:21:in `visit'
+/usr/local/lib/ruby/gems/1.9.1/gems/capybara-1.1.2/lib/capybara/rack_test/driver.rb:32:in `visit'
+/usr/local/lib/ruby/gems/1.9.1/gems/capybara-1.1.2/lib/capybara/session.rb:157:in `visit'
+/usr/local/lib/ruby/gems/1.9.1/gems/capybara-1.1.2/lib/capybara/dsl.rb:161:in `visit'
+/home/ubuntu/Documents/hw4_rottenpotatoes/features/step_definitions/web_steps.rb:45:in `block in <top (required)>'
+/usr/local/lib/ruby/gems/1.9.1/gems/cucumber-1.1.8/lib/cucumber/core_ext/instance_exec.rb:48:in `instance_exec'
+/usr/local/lib/ruby/gems/1.9.1/gems/cucumber-1.1.8/lib/cucumber/core_ext/instance_exec.rb:48:in `block in cucumber_instance_exec'
+/usr/local/lib/ruby/gems/1.9.1/gems/cucumber-1.1.8/lib/cucumber/core_ext/instance_exec.rb:69:in `cucumber_run_with_backtrace_filtering'
+/usr/local/lib/ruby/gems/1.9.1/gems/cucumber-1.1.8/lib/cucumber/core_ext/instance_exec.rb:36:in `cucumber_instance_exec'
+/usr/local/lib/ruby/gems/1.9.1/gems/cucumber-1.1.8/lib/cucumber/rb_support/rb_step_definition.rb:62:in `invoke'
+/usr/local/lib/ruby/gems/1.9.1/gems/cucumber-1.1.8/lib/cucumber/step_match.rb:25:in `invoke'
+/usr/local/lib/ruby/gems/1.9.1/gems/cucumber-1.1.8/lib/cucumber/ast/step_invocation.rb:59:in `invoke'
+/usr/local/lib/ruby/gems/1.9.1/gems/cucumber-1.1.8/lib/cucumber/ast/step_invocation.rb:38:in `accept'
+/usr/local/lib/ruby/gems/1.9.1/gems/cucumber-1.1.8/lib/cucumber/ast/tree_walker.rb:99:in `block in visit_step'
+/usr/local/lib/ruby/gems/1.9.1/gems/cucumber-1.1.8/lib/cucumber/ast/tree_walker.rb:163:in `broadcast'
+/usr/local/lib/ruby/gems/1.9.1/gems/cucumber-1.1.8/lib/cucumber/ast/tree_walker.rb:98:in `visit_step'
+/usr/local/lib/ruby/gems/1.9.1/gems/cucumber-1.1.8/lib/cucumber/ast/step_collection.rb:15:in `block in accept'
+/usr/local/lib/ruby/gems/1.9.1/gems/cucumber-1.1.8/lib/cucumber/ast/step_collection.rb:14:in `each'
+/usr/local/lib/ruby/gems/1.9.1/gems/cucumber-1.1.8/lib/cucumber/ast/step_collection.rb:14:in `accept'
+/usr/local/lib/ruby/gems/1.9.1/gems/cucumber-1.1.8/lib/cucumber/ast/tree_walker.rb:93:in `block in visit_steps'
+/usr/local/lib/ruby/gems/1.9.1/gems/cucumber-1.1.8/lib/cucumber/ast/tree_walker.rb:163:in `broadcast'
+/usr/local/lib/ruby/gems/1.9.1/gems/cucumber-1.1.8/lib/cucumber/ast/tree_walker.rb:92:in `visit_steps'
+/usr/local/lib/ruby/gems/1.9.1/gems/cucumber-1.1.8/lib/cucumber/ast/scenario.rb:55:in `block (2 levels) in accept'
+/usr/local/lib/ruby/gems/1.9.1/gems/cucumber-1.1.8/lib/cucumber/runtime.rb:80:in `block (2 levels) in with_hooks'
+/usr/local/lib/ruby/gems/1.9.1/gems/cucumber-1.1.8/lib/cucumber/runtime.rb:96:in `before_and_after'
+/usr/local/lib/ruby/gems/1.9.1/gems/cucumber-1.1.8/lib/cucumber/runtime.rb:79:in `block in with_hooks'
+/usr/local/lib/ruby/gems/1.9.1/gems/cucumber-1.1.8/lib/cucumber/runtime/support_code.rb:120:in `call'
+/usr/local/lib/ruby/gems/1.9.1/gems/cucumber-1.1.8/lib/cucumber/runtime/support_code.rb:120:in `block (3 levels) in around'
+/usr/local/lib/ruby/gems/1.9.1/gems/cucumber-1.1.8/lib/cucumber/language_support/language_methods.rb:9:in `block in around'
+/usr/local/lib/ruby/gems/1.9.1/gems/cucumber-1.1.8/lib/cucumber/language_support/language_methods.rb:91:in `call'
+/usr/local/lib/ruby/gems/1.9.1/gems/cucumber-1.1.8/lib/cucumber/language_support/language_methods.rb:91:in `execute_around'
+/usr/local/lib/ruby/gems/1.9.1/gems/cucumber-1.1.8/lib/cucumber/language_support/language_methods.rb:8:in `around'
+/usr/local/lib/ruby/gems/1.9.1/gems/cucumber-1.1.8/lib/cucumber/runtime/support_code.rb:119:in `block (2 levels) in around'
+/usr/local/lib/ruby/gems/1.9.1/gems/cucumber-1.1.8/lib/cucumber/runtime/support_code.rb:117:in `call'
+/usr/local/lib/ruby/gems/1.9.1/gems/cucumber-1.1.8/lib/cucumber/runtime/support_code.rb:117:in `around'
+/usr/local/lib/ruby/gems/1.9.1/gems/cucumber-1.1.8/lib/cucumber/runtime.rb:91:in `around'
+/usr/local/lib/ruby/gems/1.9.1/gems/cucumber-1.1.8/lib/cucumber/runtime.rb:78:in `with_hooks'
+/usr/local/lib/ruby/gems/1.9.1/gems/cucumber-1.1.8/lib/cucumber/ast/scenario.rb:53:in `block in accept'
+/usr/local/lib/ruby/gems/1.9.1/gems/cucumber-1.1.8/lib/cucumber/ast/scenario.rb:108:in `with_visitor'
+/usr/local/lib/ruby/gems/1.9.1/gems/cucumber-1.1.8/lib/cucumber/ast/scenario.rb:47:in `accept'
+/usr/local/lib/ruby/gems/1.9.1/gems/cucumber-1.1.8/lib/cucumber/ast/tree_walker.rb:51:in `block in visit_feature_element'
+/usr/local/lib/ruby/gems/1.9.1/gems/cucumber-1.1.8/lib/cucumber/ast/tree_walker.rb:163:in `broadcast'
+/usr/local/lib/ruby/gems/1.9.1/gems/cucumber-1.1.8/lib/cucumber/ast/tree_walker.rb:50:in `visit_feature_element'
+/usr/local/lib/ruby/gems/1.9.1/gems/cucumber-1.1.8/lib/cucumber/ast/feature.rb:43:in `block in accept'
+/usr/local/lib/ruby/gems/1.9.1/gems/cucumber-1.1.8/lib/cucumber/ast/feature.rb:42:in `each'
+/usr/local/lib/ruby/gems/1.9.1/gems/cucumber-1.1.8/lib/cucumber/ast/feature.rb:42:in `accept'
+/usr/local/lib/ruby/gems/1.9.1/gems/cucumber-1.1.8/lib/cucumber/ast/tree_walker.rb:20:in `block in visit_feature'
+/usr/local/lib/ruby/gems/1.9.1/gems/cucumber-1.1.8/lib/cucumber/ast/tree_walker.rb:163:in `broadcast'
+/usr/local/lib/ruby/gems/1.9.1/gems/cucumber-1.1.8/lib/cucumber/ast/tree_walker.rb:19:in `visit_feature'
+/usr/local/lib/ruby/gems/1.9.1/gems/cucumber-1.1.8/lib/cucumber/ast/features.rb:29:in `block in accept'
+/usr/local/lib/ruby/gems/1.9.1/gems/cucumber-1.1.8/lib/cucumber/ast/features.rb:17:in `each'
+/usr/local/lib/ruby/gems/1.9.1/gems/cucumber-1.1.8/lib/cucumber/ast/features.rb:17:in `each'
+/usr/local/lib/ruby/gems/1.9.1/gems/cucumber-1.1.8/lib/cucumber/ast/features.rb:28:in `accept'
+/usr/local/lib/ruby/gems/1.9.1/gems/cucumber-1.1.8/lib/cucumber/ast/tree_walker.rb:14:in `block in visit_features'
+/usr/local/lib/ruby/gems/1.9.1/gems/cucumber-1.1.8/lib/cucumber/ast/tree_walker.rb:163:in `broadcast'
+/usr/local/lib/ruby/gems/1.9.1/gems/cucumber-1.1.8/lib/cucumber/ast/tree_walker.rb:13:in `visit_features'
+/usr/local/lib/ruby/gems/1.9.1/gems/cucumber-1.1.8/lib/cucumber/runtime.rb:46:in `run!'
+/usr/local/lib/ruby/gems/1.9.1/gems/cucumber-1.1.8/lib/cucumber/cli/main.rb:43:in `execute!'
+/usr/local/lib/ruby/gems/1.9.1/gems/cucumber-1.1.8/lib/cucumber/cli/main.rb:20:in `execute'
+/usr/local/lib/ruby/gems/1.9.1/gems/cucumber-1.1.8/bin/cucumber:14:in `<top (required)>'
+/usr/local/bin/cucumber:19:in `load'
+/usr/local/bin/cucumber:19:in `<main>'
+Rendered movies/show.html.haml within layouts/application (3.4ms)
+Completed 500 Internal Server Error in 5ms
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "movies" ("created_at", "description", "director", "rating", "release_date", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["created_at", Wed, 14 Aug 2013 09:30:37 UTC +00:00], ["description", nil], ["director", "George Lucas"], ["rating", "PG"], ["release_date", Wed, 25 May 1977 00:00:00 UTC +00:00], ["title", "Star Wars"], ["updated_at", Wed, 14 Aug 2013 09:30:37 UTC +00:00]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "movies" ("created_at", "description", "director", "rating", "release_date", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["created_at", Wed, 14 Aug 2013 09:30:37 UTC +00:00], ["description", nil], ["director", "Ridley Scott"], ["rating", "PG"], ["release_date", Fri, 25 Jun 1982 00:00:00 UTC +00:00], ["title", "Blade Runner"], ["updated_at", Wed, 14 Aug 2013 09:30:37 UTC +00:00]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (10.5ms)[0m  [1mINSERT INTO "movies" ("created_at", "description", "director", "rating", "release_date", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["created_at", Wed, 14 Aug 2013 09:30:37 UTC +00:00], ["description", nil], ["director", ""], ["rating", "R"], ["release_date", Fri, 25 May 1979 00:00:00 UTC +00:00], ["title", "Alien"], ["updated_at", Wed, 14 Aug 2013 09:30:37 UTC +00:00]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "movies" ("created_at", "description", "director", "rating", "release_date", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["created_at", Wed, 14 Aug 2013 09:30:37 UTC +00:00], ["description", nil], ["director", "George Lucas"], ["rating", "R"], ["release_date", Thu, 11 Mar 1971 00:00:00 UTC +00:00], ["title", "THX-1138"], ["updated_at", Wed, 14 Aug 2013 09:30:37 UTC +00:00]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mMovie Load (0.2ms)[0m  SELECT "movies".* FROM "movies" WHERE "movies"."title" = 'Alien' LIMIT 1
+
+
+Started GET "/movies/3" for 127.0.0.1 at 2013-08-14 02:30:37 -0700
+  Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mMovie Load (0.1ms)[0m  [1mSELECT "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT 1[0m  [["id", "3"]]
+ERROR: compiling _app_views_movies_show_html_haml___266044388_101849340 RAISED /home/ubuntu/Documents/hw4_rottenpotatoes/app/views/movies/show.html.haml:18: unknown regexp options - fd
+/home/ubuntu/Documents/hw4_rottenpotatoes/app/views/movies/show.html.haml:18: syntax error, unexpected tIDENTIFIER, expecting ')'
+...me Director', /movies/find_mwsd(@movie.director)
+...                               ^
+Function body:           def _app_views_movies_show_html_haml___266044388_101849340(local_assigns, output_buffer)
+            _old_virtual_path, @virtual_path = @virtual_path, "movies/show";_old_output_buffer = @output_buffer;;begin;extend Haml::Helpers;_hamlout = @haml_buffer = Haml::Buffer.new(@haml_buffer, {:autoclose=>["meta", "img", "link", "br", "hr", "input", "area", "param", "col", "base"], :preserve=>["textarea", "pre", "code"], :attr_wrapper=>"'", :ugly=>true, :format=>:html5, :encoding=>"UTF-8", :escape_html=>true, :escape_attrs=>true});_erbout = _hamlout.buffer;__in_erb_template = true;;_hamlout.buffer << "<h2>#{
+
+"Details about #{Haml::Helpers.html_escape((@movie.title))}"
+}</h2>\n<ul id='details'>\n<li>\nRating:\n#{
+
+
+
+_hamlout.format_script_false_false_false_true_false_true_true(( @movie.rating
+));}\n</li>\n<li>\nReleased on:\n#{
+
+_hamlout.format_script_false_false_false_true_false_true_true(( @movie.release_date.strftime("%B %d, %Y")
+));}\n</li>\n</ul>\n<h3>Description:</h3>\n<p id='description'>#{
+
+
+_hamlout.format_script_false_true_false_true_false_true_true((@movie.description
+));}</p>\n#{
+_hamlout.format_script_false_false_false_true_false_true_true(( link_to 'Edit', edit_movie_path(@movie)
+));}\n#{_hamlout.format_script_false_false_false_true_false_true_true(( link_to 'Find Movies With Same Director', /movies/find_mwsd(@movie.director)
+));}\n#{_hamlout.format_script_false_false_false_true_false_true_true(( button_to 'Delete', movie_path(@movie), :method => :delete, :confirm => 'Are you sure?'
+));}\n#{_hamlout.format_script_false_false_false_true_false_true_true(( link_to 'Back to movie list', movies_path
+));}\n";::Haml::Util.html_safe(_erbout);ensure;@haml_buffer = @haml_buffer.upper if @haml_buffer;end;
+          ensure
+            @virtual_path, @output_buffer = _old_virtual_path, _old_output_buffer
+          end
+Backtrace: /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_view/template.rb:282:in `module_eval'
+/usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_view/template.rb:282:in `compile'
+/usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_view/template.rb:190:in `compile!'
+/usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_view/template.rb:143:in `block in render'
+/usr/local/lib/ruby/gems/1.9.1/gems/activesupport-3.1.0/lib/active_support/notifications.rb:55:in `instrument'
+/usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_view/template.rb:142:in `render'
+/usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_view/renderer/template_renderer.rb:40:in `block (2 levels) in render_template'
+/usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_view/renderer/abstract_renderer.rb:33:in `block in instrument'
+/usr/local/lib/ruby/gems/1.9.1/gems/activesupport-3.1.0/lib/active_support/notifications.rb:53:in `block in instrument'
+/usr/local/lib/ruby/gems/1.9.1/gems/activesupport-3.1.0/lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+/usr/local/lib/ruby/gems/1.9.1/gems/activesupport-3.1.0/lib/active_support/notifications.rb:53:in `instrument'
+/usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_view/renderer/abstract_renderer.rb:33:in `instrument'
+/usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_view/renderer/template_renderer.rb:39:in `block in render_template'
+/usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_view/renderer/template_renderer.rb:47:in `render_with_layout'
+/usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_view/renderer/template_renderer.rb:38:in `render_template'
+/usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_view/renderer/template_renderer.rb:12:in `block in render'
+/usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_view/renderer/abstract_renderer.rb:22:in `wrap_formats'
+/usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_view/renderer/template_renderer.rb:9:in `render'
+/usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_view/renderer/renderer.rb:36:in `render_template'
+/usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_view/renderer/renderer.rb:17:in `render'
+/usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/abstract_controller/rendering.rb:120:in `_render_template'
+/usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_controller/metal/streaming.rb:250:in `_render_template'
+/usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/abstract_controller/rendering.rb:114:in `render_to_body'
+/usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_controller/metal/renderers.rb:30:in `render_to_body'
+/usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_controller/metal/compatibility.rb:43:in `render_to_body'
+/usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/abstract_controller/rendering.rb:99:in `render'
+/usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_controller/metal/rendering.rb:16:in `render'
+/usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_controller/metal/instrumentation.rb:40:in `block (2 levels) in render'
+/usr/local/lib/ruby/gems/1.9.1/gems/activesupport-3.1.0/lib/active_support/core_ext/benchmark.rb:5:in `block in ms'
+/usr/local/lib/ruby/1.9.1/benchmark.rb:310:in `realtime'
+/usr/local/lib/ruby/gems/1.9.1/gems/activesupport-3.1.0/lib/active_support/core_ext/benchmark.rb:5:in `ms'
+/usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_controller/metal/instrumentation.rb:40:in `block in render'
+/usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_controller/metal/instrumentation.rb:78:in `cleanup_view_runtime'
+/usr/local/lib/ruby/gems/1.9.1/gems/activerecord-3.1.0/lib/active_record/railties/controller_runtime.rb:24:in `cleanup_view_runtime'
+/usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_controller/metal/instrumentation.rb:39:in `render'
+/usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_controller/metal/implicit_render.rb:10:in `default_render'
+/usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_controller/metal/implicit_render.rb:5:in `send_action'
+/usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/abstract_controller/base.rb:167:in `process_action'
+/usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_controller/metal/rendering.rb:10:in `process_action'
+/usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/abstract_controller/callbacks.rb:18:in `block in process_action'
+/usr/local/lib/ruby/gems/1.9.1/gems/activesupport-3.1.0/lib/active_support/callbacks.rb:416:in `_run__716341151__process_action__461707032__callbacks'
+/usr/local/lib/ruby/gems/1.9.1/gems/activesupport-3.1.0/lib/active_support/callbacks.rb:386:in `_run_process_action_callbacks'
+/usr/local/lib/ruby/gems/1.9.1/gems/activesupport-3.1.0/lib/active_support/callbacks.rb:81:in `run_callbacks'
+/usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/abstract_controller/callbacks.rb:17:in `process_action'
+/usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_controller/metal/rescue.rb:17:in `process_action'
+/usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_controller/metal/instrumentation.rb:30:in `block in process_action'
+/usr/local/lib/ruby/gems/1.9.1/gems/activesupport-3.1.0/lib/active_support/notifications.rb:53:in `block in instrument'
+/usr/local/lib/ruby/gems/1.9.1/gems/activesupport-3.1.0/lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+/usr/local/lib/ruby/gems/1.9.1/gems/activesupport-3.1.0/lib/active_support/notifications.rb:53:in `instrument'
+/usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_controller/metal/instrumentation.rb:29:in `process_action'
+/usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_controller/metal/params_wrapper.rb:201:in `process_action'
+/usr/local/lib/ruby/gems/1.9.1/gems/activerecord-3.1.0/lib/active_record/railties/controller_runtime.rb:18:in `process_action'
+/usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/abstract_controller/base.rb:121:in `process'
+/usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/abstract_controller/rendering.rb:45:in `process'
+/usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_controller/metal.rb:193:in `dispatch'
+/usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_controller/metal/rack_delegation.rb:14:in `dispatch'
+/usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_controller/metal.rb:236:in `block in action'
+/usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_dispatch/routing/route_set.rb:65:in `call'
+/usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_dispatch/routing/route_set.rb:65:in `dispatch'
+/usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_dispatch/routing/route_set.rb:29:in `call'
+/usr/local/lib/ruby/gems/1.9.1/gems/rack-mount-0.8.3/lib/rack/mount/route_set.rb:152:in `block in call'
+/usr/local/lib/ruby/gems/1.9.1/gems/rack-mount-0.8.3/lib/rack/mount/code_generation.rb:96:in `block in recognize'
+/usr/local/lib/ruby/gems/1.9.1/gems/rack-mount-0.8.3/lib/rack/mount/code_generation.rb:96:in `optimized_each'
+/usr/local/lib/ruby/gems/1.9.1/gems/rack-mount-0.8.3/lib/rack/mount/code_generation.rb:95:in `recognize'
+/usr/local/lib/ruby/gems/1.9.1/gems/rack-mount-0.8.3/lib/rack/mount/route_set.rb:141:in `call'
+/usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_dispatch/routing/route_set.rb:531:in `call'
+/usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_dispatch/middleware/best_standards_support.rb:17:in `call'
+/usr/local/lib/ruby/gems/1.9.1/gems/rack-1.3.6/lib/rack/etag.rb:23:in `call'
+/usr/local/lib/ruby/gems/1.9.1/gems/rack-1.3.6/lib/rack/conditionalget.rb:25:in `call'
+/usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_dispatch/middleware/head.rb:14:in `call'
+/usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_dispatch/middleware/params_parser.rb:21:in `call'
+/usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_dispatch/middleware/flash.rb:243:in `call'
+/usr/local/lib/ruby/gems/1.9.1/gems/rack-1.3.6/lib/rack/session/abstract/id.rb:195:in `context'
+/usr/local/lib/ruby/gems/1.9.1/gems/rack-1.3.6/lib/rack/session/abstract/id.rb:190:in `call'
+/usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_dispatch/middleware/cookies.rb:326:in `call'
+/usr/local/lib/ruby/gems/1.9.1/gems/activerecord-3.1.0/lib/active_record/query_cache.rb:62:in `call'
+/usr/local/lib/ruby/gems/1.9.1/gems/activerecord-3.1.0/lib/active_record/connection_adapters/abstract/connection_pool.rb:477:in `call'
+/usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+/usr/local/lib/ruby/gems/1.9.1/gems/activesupport-3.1.0/lib/active_support/callbacks.rb:392:in `_run_call_callbacks'
+/usr/local/lib/ruby/gems/1.9.1/gems/activesupport-3.1.0/lib/active_support/callbacks.rb:81:in `run_callbacks'
+/usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_dispatch/middleware/callbacks.rb:28:in `call'
+/usr/local/lib/ruby/gems/1.9.1/gems/rack-1.3.6/lib/rack/sendfile.rb:101:in `call'
+/usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_dispatch/middleware/remote_ip.rb:48:in `call'
+/usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_dispatch/middleware/show_exceptions.rb:47:in `call'
+/usr/local/lib/ruby/gems/1.9.1/gems/cucumber-rails-1.3.0/lib/cucumber/rails/action_controller.rb:10:in `call'
+/usr/local/lib/ruby/gems/1.9.1/gems/railties-3.1.0/lib/rails/rack/logger.rb:13:in `call'
+/usr/local/lib/ruby/gems/1.9.1/gems/rack-1.3.6/lib/rack/methodoverride.rb:24:in `call'
+/usr/local/lib/ruby/gems/1.9.1/gems/rack-1.3.6/lib/rack/runtime.rb:17:in `call'
+/usr/local/lib/ruby/gems/1.9.1/gems/activesupport-3.1.0/lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+/usr/local/lib/ruby/gems/1.9.1/gems/rack-1.3.6/lib/rack/lock.rb:15:in `call'
+/usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_dispatch/middleware/static.rb:53:in `call'
+/usr/local/lib/ruby/gems/1.9.1/gems/railties-3.1.0/lib/rails/engine.rb:455:in `call'
+/usr/local/lib/ruby/gems/1.9.1/gems/rack-1.3.6/lib/rack/urlmap.rb:52:in `block in call'
+/usr/local/lib/ruby/gems/1.9.1/gems/rack-1.3.6/lib/rack/urlmap.rb:46:in `each'
+/usr/local/lib/ruby/gems/1.9.1/gems/rack-1.3.6/lib/rack/urlmap.rb:46:in `call'
+/usr/local/lib/ruby/gems/1.9.1/gems/rack-test-0.6.1/lib/rack/mock_session.rb:30:in `request'
+/usr/local/lib/ruby/gems/1.9.1/gems/rack-test-0.6.1/lib/rack/test.rb:219:in `process_request'
+/usr/local/lib/ruby/gems/1.9.1/gems/rack-test-0.6.1/lib/rack/test.rb:57:in `get'
+/usr/local/lib/ruby/1.9.1/forwardable.rb:182:in `get'
+/usr/local/lib/ruby/gems/1.9.1/gems/capybara-1.1.2/lib/capybara/rack_test/browser.rb:62:in `process'
+/usr/local/lib/ruby/gems/1.9.1/gems/capybara-1.1.2/lib/capybara/rack_test/browser.rb:21:in `visit'
+/usr/local/lib/ruby/gems/1.9.1/gems/capybara-1.1.2/lib/capybara/rack_test/driver.rb:32:in `visit'
+/usr/local/lib/ruby/gems/1.9.1/gems/capybara-1.1.2/lib/capybara/session.rb:157:in `visit'
+/usr/local/lib/ruby/gems/1.9.1/gems/capybara-1.1.2/lib/capybara/dsl.rb:161:in `visit'
+/home/ubuntu/Documents/hw4_rottenpotatoes/features/step_definitions/web_steps.rb:45:in `block in <top (required)>'
+/usr/local/lib/ruby/gems/1.9.1/gems/cucumber-1.1.8/lib/cucumber/core_ext/instance_exec.rb:48:in `instance_exec'
+/usr/local/lib/ruby/gems/1.9.1/gems/cucumber-1.1.8/lib/cucumber/core_ext/instance_exec.rb:48:in `block in cucumber_instance_exec'
+/usr/local/lib/ruby/gems/1.9.1/gems/cucumber-1.1.8/lib/cucumber/core_ext/instance_exec.rb:69:in `cucumber_run_with_backtrace_filtering'
+/usr/local/lib/ruby/gems/1.9.1/gems/cucumber-1.1.8/lib/cucumber/core_ext/instance_exec.rb:36:in `cucumber_instance_exec'
+/usr/local/lib/ruby/gems/1.9.1/gems/cucumber-1.1.8/lib/cucumber/rb_support/rb_step_definition.rb:62:in `invoke'
+/usr/local/lib/ruby/gems/1.9.1/gems/cucumber-1.1.8/lib/cucumber/step_match.rb:25:in `invoke'
+/usr/local/lib/ruby/gems/1.9.1/gems/cucumber-1.1.8/lib/cucumber/ast/step_invocation.rb:59:in `invoke'
+/usr/local/lib/ruby/gems/1.9.1/gems/cucumber-1.1.8/lib/cucumber/ast/step_invocation.rb:38:in `accept'
+/usr/local/lib/ruby/gems/1.9.1/gems/cucumber-1.1.8/lib/cucumber/ast/tree_walker.rb:99:in `block in visit_step'
+/usr/local/lib/ruby/gems/1.9.1/gems/cucumber-1.1.8/lib/cucumber/ast/tree_walker.rb:163:in `broadcast'
+/usr/local/lib/ruby/gems/1.9.1/gems/cucumber-1.1.8/lib/cucumber/ast/tree_walker.rb:98:in `visit_step'
+/usr/local/lib/ruby/gems/1.9.1/gems/cucumber-1.1.8/lib/cucumber/ast/step_collection.rb:15:in `block in accept'
+/usr/local/lib/ruby/gems/1.9.1/gems/cucumber-1.1.8/lib/cucumber/ast/step_collection.rb:14:in `each'
+/usr/local/lib/ruby/gems/1.9.1/gems/cucumber-1.1.8/lib/cucumber/ast/step_collection.rb:14:in `accept'
+/usr/local/lib/ruby/gems/1.9.1/gems/cucumber-1.1.8/lib/cucumber/ast/tree_walker.rb:93:in `block in visit_steps'
+/usr/local/lib/ruby/gems/1.9.1/gems/cucumber-1.1.8/lib/cucumber/ast/tree_walker.rb:163:in `broadcast'
+/usr/local/lib/ruby/gems/1.9.1/gems/cucumber-1.1.8/lib/cucumber/ast/tree_walker.rb:92:in `visit_steps'
+/usr/local/lib/ruby/gems/1.9.1/gems/cucumber-1.1.8/lib/cucumber/ast/scenario.rb:55:in `block (2 levels) in accept'
+/usr/local/lib/ruby/gems/1.9.1/gems/cucumber-1.1.8/lib/cucumber/runtime.rb:80:in `block (2 levels) in with_hooks'
+/usr/local/lib/ruby/gems/1.9.1/gems/cucumber-1.1.8/lib/cucumber/runtime.rb:96:in `before_and_after'
+/usr/local/lib/ruby/gems/1.9.1/gems/cucumber-1.1.8/lib/cucumber/runtime.rb:79:in `block in with_hooks'
+/usr/local/lib/ruby/gems/1.9.1/gems/cucumber-1.1.8/lib/cucumber/runtime/support_code.rb:120:in `call'
+/usr/local/lib/ruby/gems/1.9.1/gems/cucumber-1.1.8/lib/cucumber/runtime/support_code.rb:120:in `block (3 levels) in around'
+/usr/local/lib/ruby/gems/1.9.1/gems/cucumber-1.1.8/lib/cucumber/language_support/language_methods.rb:9:in `block in around'
+/usr/local/lib/ruby/gems/1.9.1/gems/cucumber-1.1.8/lib/cucumber/language_support/language_methods.rb:91:in `call'
+/usr/local/lib/ruby/gems/1.9.1/gems/cucumber-1.1.8/lib/cucumber/language_support/language_methods.rb:91:in `execute_around'
+/usr/local/lib/ruby/gems/1.9.1/gems/cucumber-1.1.8/lib/cucumber/language_support/language_methods.rb:8:in `around'
+/usr/local/lib/ruby/gems/1.9.1/gems/cucumber-1.1.8/lib/cucumber/runtime/support_code.rb:119:in `block (2 levels) in around'
+/usr/local/lib/ruby/gems/1.9.1/gems/cucumber-1.1.8/lib/cucumber/runtime/support_code.rb:117:in `call'
+/usr/local/lib/ruby/gems/1.9.1/gems/cucumber-1.1.8/lib/cucumber/runtime/support_code.rb:117:in `around'
+/usr/local/lib/ruby/gems/1.9.1/gems/cucumber-1.1.8/lib/cucumber/runtime.rb:91:in `around'
+/usr/local/lib/ruby/gems/1.9.1/gems/cucumber-1.1.8/lib/cucumber/runtime.rb:78:in `with_hooks'
+/usr/local/lib/ruby/gems/1.9.1/gems/cucumber-1.1.8/lib/cucumber/ast/scenario.rb:53:in `block in accept'
+/usr/local/lib/ruby/gems/1.9.1/gems/cucumber-1.1.8/lib/cucumber/ast/scenario.rb:108:in `with_visitor'
+/usr/local/lib/ruby/gems/1.9.1/gems/cucumber-1.1.8/lib/cucumber/ast/scenario.rb:47:in `accept'
+/usr/local/lib/ruby/gems/1.9.1/gems/cucumber-1.1.8/lib/cucumber/ast/tree_walker.rb:51:in `block in visit_feature_element'
+/usr/local/lib/ruby/gems/1.9.1/gems/cucumber-1.1.8/lib/cucumber/ast/tree_walker.rb:163:in `broadcast'
+/usr/local/lib/ruby/gems/1.9.1/gems/cucumber-1.1.8/lib/cucumber/ast/tree_walker.rb:50:in `visit_feature_element'
+/usr/local/lib/ruby/gems/1.9.1/gems/cucumber-1.1.8/lib/cucumber/ast/feature.rb:43:in `block in accept'
+/usr/local/lib/ruby/gems/1.9.1/gems/cucumber-1.1.8/lib/cucumber/ast/feature.rb:42:in `each'
+/usr/local/lib/ruby/gems/1.9.1/gems/cucumber-1.1.8/lib/cucumber/ast/feature.rb:42:in `accept'
+/usr/local/lib/ruby/gems/1.9.1/gems/cucumber-1.1.8/lib/cucumber/ast/tree_walker.rb:20:in `block in visit_feature'
+/usr/local/lib/ruby/gems/1.9.1/gems/cucumber-1.1.8/lib/cucumber/ast/tree_walker.rb:163:in `broadcast'
+/usr/local/lib/ruby/gems/1.9.1/gems/cucumber-1.1.8/lib/cucumber/ast/tree_walker.rb:19:in `visit_feature'
+/usr/local/lib/ruby/gems/1.9.1/gems/cucumber-1.1.8/lib/cucumber/ast/features.rb:29:in `block in accept'
+/usr/local/lib/ruby/gems/1.9.1/gems/cucumber-1.1.8/lib/cucumber/ast/features.rb:17:in `each'
+/usr/local/lib/ruby/gems/1.9.1/gems/cucumber-1.1.8/lib/cucumber/ast/features.rb:17:in `each'
+/usr/local/lib/ruby/gems/1.9.1/gems/cucumber-1.1.8/lib/cucumber/ast/features.rb:28:in `accept'
+/usr/local/lib/ruby/gems/1.9.1/gems/cucumber-1.1.8/lib/cucumber/ast/tree_walker.rb:14:in `block in visit_features'
+/usr/local/lib/ruby/gems/1.9.1/gems/cucumber-1.1.8/lib/cucumber/ast/tree_walker.rb:163:in `broadcast'
+/usr/local/lib/ruby/gems/1.9.1/gems/cucumber-1.1.8/lib/cucumber/ast/tree_walker.rb:13:in `visit_features'
+/usr/local/lib/ruby/gems/1.9.1/gems/cucumber-1.1.8/lib/cucumber/runtime.rb:46:in `run!'
+/usr/local/lib/ruby/gems/1.9.1/gems/cucumber-1.1.8/lib/cucumber/cli/main.rb:43:in `execute!'
+/usr/local/lib/ruby/gems/1.9.1/gems/cucumber-1.1.8/lib/cucumber/cli/main.rb:20:in `execute'
+/usr/local/lib/ruby/gems/1.9.1/gems/cucumber-1.1.8/bin/cucumber:14:in `<top (required)>'
+/usr/local/bin/cucumber:19:in `load'
+/usr/local/bin/cucumber:19:in `<main>'
+Rendered movies/show.html.haml within layouts/application (3.8ms)
+Completed 500 Internal Server Error in 5ms
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (33.1ms)[0m  INSERT INTO "movies" ("created_at", "description", "director", "rating", "release_date", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["created_at", Wed, 14 Aug 2013 09:32:26 UTC +00:00], ["description", nil], ["director", "George Lucas"], ["rating", "PG"], ["release_date", Wed, 25 May 1977 00:00:00 UTC +00:00], ["title", "Star Wars"], ["updated_at", Wed, 14 Aug 2013 09:32:26 UTC +00:00]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "movies" ("created_at", "description", "director", "rating", "release_date", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["created_at", Wed, 14 Aug 2013 09:32:26 UTC +00:00], ["description", nil], ["director", "Ridley Scott"], ["rating", "PG"], ["release_date", Fri, 25 Jun 1982 00:00:00 UTC +00:00], ["title", "Blade Runner"], ["updated_at", Wed, 14 Aug 2013 09:32:26 UTC +00:00]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "movies" ("created_at", "description", "director", "rating", "release_date", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["created_at", Wed, 14 Aug 2013 09:32:26 UTC +00:00], ["description", nil], ["director", ""], ["rating", "R"], ["release_date", Fri, 25 May 1979 00:00:00 UTC +00:00], ["title", "Alien"], ["updated_at", Wed, 14 Aug 2013 09:32:26 UTC +00:00]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.7ms)[0m  [1mINSERT INTO "movies" ("created_at", "description", "director", "rating", "release_date", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["created_at", Wed, 14 Aug 2013 09:32:26 UTC +00:00], ["description", nil], ["director", "George Lucas"], ["rating", "R"], ["release_date", Thu, 11 Mar 1971 00:00:00 UTC +00:00], ["title", "THX-1138"], ["updated_at", Wed, 14 Aug 2013 09:32:26 UTC +00:00]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mMovie Load (0.2ms)[0m  [1mSELECT "movies".* FROM "movies" WHERE "movies"."title" = 'Alien' LIMIT 1[0m
+
+
+Started GET "/movies/3/edit" for 127.0.0.1 at 2013-08-14 02:32:26 -0700
+  Processing by MoviesController#edit as HTML
+  Parameters: {"id"=>"3"}
+  [1m[35mMovie Load (0.3ms)[0m  SELECT "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT 1  [["id", "3"]]
+Rendered movies/edit.html.haml within layouts/application (7.9ms)
+Completed 200 OK in 135ms (Views: 133.4ms | ActiveRecord: 0.3ms)
+
+
+Started PUT "/movies/3" for 127.0.0.1 at 2013-08-14 02:32:27 -0700
+  Processing by MoviesController#update as HTML
+  Parameters: {"utf8"=>"✓", "movie"=>{"title"=>"Alien", "rating"=>"R", "director"=>"Ridley Scott", "release_date(1i)"=>"1979", "release_date(2i)"=>"5", "release_date(3i)"=>"25"}, "commit"=>"Update Movie Info", "id"=>"3"}
+  [1m[36mMovie Load (0.1ms)[0m  [1mSELECT "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT 1[0m  [["id", "3"]]
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mUPDATE "movies" SET "director" = 'Ridley Scott', "updated_at" = '2013-08-14 09:32:27.602674' WHERE "movies"."id" = 3[0m
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://www.example.com/movies/3
+Completed 302 Found in 5ms
+
+
+Started GET "/movies/3" for 127.0.0.1 at 2013-08-14 02:32:27 -0700
+  Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mMovie Load (0.1ms)[0m  [1mSELECT "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT 1[0m  [["id", "3"]]
+Rendered movies/show.html.haml within layouts/application (5.8ms)
+Completed 200 OK in 9ms (Views: 8.4ms | ActiveRecord: 0.1ms)
+  [1m[35mMovie Load (0.1ms)[0m  SELECT "movies".* FROM "movies" WHERE "movies"."title" = 'Alien' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "movies" ("created_at", "description", "director", "rating", "release_date", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["created_at", Wed, 14 Aug 2013 09:32:27 UTC +00:00], ["description", nil], ["director", "George Lucas"], ["rating", "PG"], ["release_date", Wed, 25 May 1977 00:00:00 UTC +00:00], ["title", "Star Wars"], ["updated_at", Wed, 14 Aug 2013 09:32:27 UTC +00:00]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "movies" ("created_at", "description", "director", "rating", "release_date", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["created_at", Wed, 14 Aug 2013 09:32:27 UTC +00:00], ["description", nil], ["director", "Ridley Scott"], ["rating", "PG"], ["release_date", Fri, 25 Jun 1982 00:00:00 UTC +00:00], ["title", "Blade Runner"], ["updated_at", Wed, 14 Aug 2013 09:32:27 UTC +00:00]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "movies" ("created_at", "description", "director", "rating", "release_date", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["created_at", Wed, 14 Aug 2013 09:32:27 UTC +00:00], ["description", nil], ["director", ""], ["rating", "R"], ["release_date", Fri, 25 May 1979 00:00:00 UTC +00:00], ["title", "Alien"], ["updated_at", Wed, 14 Aug 2013 09:32:27 UTC +00:00]]
+  [1m[36m (2.3ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "movies" ("created_at", "description", "director", "rating", "release_date", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["created_at", Wed, 14 Aug 2013 09:32:27 UTC +00:00], ["description", nil], ["director", "George Lucas"], ["rating", "R"], ["release_date", Thu, 11 Mar 1971 00:00:00 UTC +00:00], ["title", "THX-1138"], ["updated_at", Wed, 14 Aug 2013 09:32:27 UTC +00:00]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mMovie Load (0.2ms)[0m  [1mSELECT "movies".* FROM "movies" WHERE "movies"."title" = 'Star Wars' LIMIT 1[0m
+
+
+Started GET "/movies/1" for 127.0.0.1 at 2013-08-14 02:32:27 -0700
+  Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mMovie Load (0.1ms)[0m  SELECT "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT 1  [["id", "1"]]
+Rendered movies/show.html.haml within layouts/application (7.7ms)
+Completed 200 OK in 10ms (Views: 9.0ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/movies/find_mwsd.George%20Lucas" for 127.0.0.1 at 2013-08-14 02:32:27 -0700
+  Processing by MoviesController#show as 
+  Parameters: {"id"=>"find_mwsd"}
+  [1m[36mMovie Load (0.1ms)[0m  [1mSELECT "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT 1[0m  [["id", "find_mwsd"]]
+Completed 404 Not Found in 2ms
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "movies" ("created_at", "description", "director", "rating", "release_date", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["created_at", Wed, 14 Aug 2013 09:32:27 UTC +00:00], ["description", nil], ["director", "George Lucas"], ["rating", "PG"], ["release_date", Wed, 25 May 1977 00:00:00 UTC +00:00], ["title", "Star Wars"], ["updated_at", Wed, 14 Aug 2013 09:32:27 UTC +00:00]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "movies" ("created_at", "description", "director", "rating", "release_date", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["created_at", Wed, 14 Aug 2013 09:32:27 UTC +00:00], ["description", nil], ["director", "Ridley Scott"], ["rating", "PG"], ["release_date", Fri, 25 Jun 1982 00:00:00 UTC +00:00], ["title", "Blade Runner"], ["updated_at", Wed, 14 Aug 2013 09:32:27 UTC +00:00]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "movies" ("created_at", "description", "director", "rating", "release_date", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["created_at", Wed, 14 Aug 2013 09:32:27 UTC +00:00], ["description", nil], ["director", ""], ["rating", "R"], ["release_date", Fri, 25 May 1979 00:00:00 UTC +00:00], ["title", "Alien"], ["updated_at", Wed, 14 Aug 2013 09:32:27 UTC +00:00]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "movies" ("created_at", "description", "director", "rating", "release_date", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["created_at", Wed, 14 Aug 2013 09:32:27 UTC +00:00], ["description", nil], ["director", "George Lucas"], ["rating", "R"], ["release_date", Thu, 11 Mar 1971 00:00:00 UTC +00:00], ["title", "THX-1138"], ["updated_at", Wed, 14 Aug 2013 09:32:27 UTC +00:00]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mMovie Load (0.1ms)[0m  SELECT "movies".* FROM "movies" WHERE "movies"."title" = 'Alien' LIMIT 1
+
+
+Started GET "/movies/3" for 127.0.0.1 at 2013-08-14 02:32:27 -0700
+  Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mMovie Load (0.0ms)[0m  [1mSELECT "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT 1[0m  [["id", "3"]]
+Rendered movies/show.html.haml within layouts/application (3.1ms)
+Completed 200 OK in 5ms (Views: 4.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/movies/find_mwsd?format=" for 127.0.0.1 at 2013-08-14 02:32:27 -0700
+  Processing by MoviesController#show as 
+  Parameters: {"id"=>"find_mwsd"}
+  [1m[35mMovie Load (0.1ms)[0m  SELECT "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT 1  [["id", "find_mwsd"]]
+Completed 404 Not Found in 75ms
