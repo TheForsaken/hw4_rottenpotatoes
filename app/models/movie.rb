@@ -3,10 +3,10 @@ class Movie < ActiveRecord::Base
     %w(G PG PG-13 NC-17 R)
   end
 
-  def find_mwsd(id)
-		debugger
-		director = Movie.find_by_id.director
-		Movie.all.find_by_director(director)
+  def self.find_mwsd(id)
+    debugger
+		director = Movie.find_by_id(id).director
+		Movie.find_all_by_director(director)
   end  
 
 end
