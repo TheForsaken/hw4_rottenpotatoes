@@ -4,7 +4,7 @@ class Movie < ActiveRecord::Base
   end
 
   def self.find_mwsd(id)
-    if Movie.find(id).director.nil?
+    if Movie.find(id).director.nil? or Movie.find(id).director.empty?
       return nil
     else
       director = Movie.find(id).director
