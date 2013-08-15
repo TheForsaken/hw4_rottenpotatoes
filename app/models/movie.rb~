@@ -6,7 +6,7 @@ class Movie < ActiveRecord::Base
   def self.find_mwsd(id)
     debugger
 		director = Movie.find_by_id(id).director
-		Movie.all.find_by_director(director)
+		Movie.find_all_by_director(director)
   end  
 
 end
