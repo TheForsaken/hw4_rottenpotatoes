@@ -24,16 +24,17 @@ module NavigationHelpers
     when /^the edit page for "(.+)"$/
       #debugger
       movie_id = Movie.find_by_title($1).id
-    	"/movies/#{movie_id}/edit"
-		when /^the details page for "(.+)"$/
-			movie_id = Movie.find_by_title($1).id
-			"/movies/#{movie_id}"
-	  when /^the Similar Movies page for "(.+)"$/
-      "/movies/#{$1}/with_same_director"
+      "/movies/#{movie_id}/edit"
+    when /^the details page for "(.+)"$/
+      movie_id = Movie.find_by_title($1).id	
+      "/movies/#{movie_id}" 
+    when /^the Similar Movies page for "(.+)"$/
+      movie_id = Movie.find_by_title($1).id	
+      "/movies/#{movie_id}/with_same_director"
 
 
- 		#when /^(.*)'s profile page$/i
-		#user_profile_path(User.find_by_login($1))
+    #when /^(.*)'s profile page$/i
+    #user_profile_path(User.find_by_login($1))
 
  		
     # Add more mappings here.

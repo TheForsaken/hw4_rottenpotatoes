@@ -1,7 +1,6 @@
 class MoviesController < ApplicationController
 
 	def with_same_director
-    debugger
     @movies = Movie.find_mwsd(params[:id].to_i)
 	end
 

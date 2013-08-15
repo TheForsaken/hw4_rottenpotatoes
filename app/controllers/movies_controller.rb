@@ -1,8 +1,8 @@
 class MoviesController < ApplicationController
 
-	def with_same_director
+  def with_same_director
     @movies = Movie.find_mwsd(params[:id].to_i)
-	end
+  end
 
   def show
     id = params[:id] # retrieve movie ID from URI route
