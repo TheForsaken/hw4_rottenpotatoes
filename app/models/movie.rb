@@ -4,8 +4,12 @@ class Movie < ActiveRecord::Base
   end
 
   def self.find_mwsd(id)
-		director = Movie.find_by_id(id).director
-		Movie.find_all_by_director(director)
+    if Movie.find(id).nil?
+      return nil
+    else
+      director = Movie.find(id).director
+      Movie.find_all_by_director(director)
+    end
   end  
 
 end

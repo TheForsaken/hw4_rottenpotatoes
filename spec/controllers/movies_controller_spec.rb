@@ -3,11 +3,11 @@ require 'spec_helper'
 describe MoviesController do
   describe 'Find Movies With Same Director' do
     it 'should call the model method that performs FMWSD search' do
-			Movie.should_receive(:find_mwsd).with(3)
+      Movie.should_receive(:find_mwsd).with(3)
       get :with_same_director, {:id => 3}
     end
     it 'should select the FMWSD Search Results template for rendering' do
-			Movie.stub(:find_mwsd).with(3)
+      Movie.stub(:find_mwsd).with(3).and_return(mock('Movie'))
       get :with_same_director, {:id => 3}
       response.should render_template('with_same_director')
     end

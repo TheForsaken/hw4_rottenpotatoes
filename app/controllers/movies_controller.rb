@@ -2,6 +2,13 @@ class MoviesController < ApplicationController
 
   def with_same_director
     @movies = Movie.find_mwsd(params[:id].to_i)
+    if @movies.nil?
+      unless Movie.all.empty?	
+        title = Movie.find(params[:id]).title
+        flash[:notice] = "#{title} has no director info"
+      end
+      redirect_to movies_path
+    end
   end
 
   def show
