@@ -1,9 +1,7 @@
 class MoviesController < ApplicationController
 
-	def find_mwsd 
-    id = params[:id]
-		director = Movie.find(id).director
-    @movies = Movie.find_all_by_director(director)
+	def with_same_director
+    @movies = Movie.find_mwsd(params[:id].to_i)
 	end
 
   def show

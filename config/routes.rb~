@@ -14,7 +14,7 @@ Rottenpotatoes::Application.routes.draw do
   #   resources :products
   resources :movies do
   	member do 
-			post 'find_mwsd'
+			get 'find_mwsd'
 		end
 	end
 

@@ -13,7 +13,7 @@ module NavigationHelpers
   def click_link(link)
     case link
     when /^Find Movies With Same Director$/
-      "/movies/find_mwsd"
+      "/movies/#{$1}/with_same_director"
     end
   end
   def path_to(page_name)
@@ -29,7 +29,7 @@ module NavigationHelpers
 			movie_id = Movie.find_by_title($1).id
 			"/movies/#{movie_id}"
 	  when /^the Similar Movies page for "(.+)"$/
-      "/movies/#{$1}/find_mwsd"
+      "/movies/#{$1}/with_same_director"
 
 
  		#when /^(.*)'s profile page$/i
