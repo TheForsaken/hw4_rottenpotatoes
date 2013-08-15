@@ -10,15 +10,8 @@ module NavigationHelpers
   #
   # step definition in web_steps.rb
   #
-  def click_link(link)
-    case link
-    when /^Find Movies With Same Director$/
-      "/movies/#{$1}/with_same_director"
-    end
-  end
   def path_to(page_name)
     case page_name
-
     when /^the home\s?page$/
     	'/'
     when /^the edit page for "(.+)"$/

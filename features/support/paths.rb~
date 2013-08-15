@@ -10,12 +10,6 @@ module NavigationHelpers
   #
   # step definition in web_steps.rb
   #
-  def click_link(link)
-    case link
-    when /^Find Movies With Same Director$/
-      "/movies/#{$1}/with_same_director"
-    end
-  end
   def path_to(page_name)
     case page_name
 
@@ -33,8 +27,8 @@ module NavigationHelpers
       "/movies/#{movie_id}/with_same_director"
 
 
- 		#when /^(.*)'s profile page$/i
-		#user_profile_path(User.find_by_login($1))
+    #when /^(.*)'s profile page$/i
+    #user_profile_path(User.find_by_login($1))
 
  		
     # Add more mappings here.
